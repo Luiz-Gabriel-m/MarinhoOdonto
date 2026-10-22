@@ -1,0 +1,1360 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marinho Dentistas | Odontologia Estética de Alto Padrão em Extrema & Toledo</title>
+  <meta name="description" content="Transformamos vidas através do sorriso. Especialistas em Lentes de Contato Dental, Escaneamento 3D, Clareamento a Laser e Harmonização Oral em Extrema (MG) e Toledo.">
+  <meta name="keywords" content="dentista extrema mg, lentes de contato dental, clareamento dental, marinho dentistas, facetas de resina, escaneamento 3d, odontologia estética">
+  
+  <!-- Open Graph / Meta Compartilhamento -->
+  <meta property="og:title" content="Marinho Dentistas | Transformamos Vidas Através do Sorriso">
+  <meta property="og:description" content="Clínica odontológica de alto padrão em Extrema, MG. Arquitetura acolhedora, tecnologia 3D e estética do sorriso com precisão artística.">
+  <meta property="og:image" content="assets/images/clinic-facade-night.jpg">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0B0C10">
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            noir: {
+              950: '#07080A',
+              900: '#0B0C10',
+              850: '#111317',
+              800: '#17191F',
+              700: '#232630'
+            },
+            caramel: {
+              300: '#E2B184',
+              400: '#D49A6A',
+              500: '#C68B59',
+              600: '#B27443',
+              700: '#8C5427'
+            },
+            gold: {
+              200: '#F9E7BA',
+              300: '#EED596',
+              400: '#DFC075',
+              500: '#C5A059',
+              600: '#A9833D'
+            },
+            led: {
+              warm: '#FFE3B3',
+              glow: 'rgba(255, 213, 145, 0.45)'
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            title: ['"Montserrat"', 'sans-serif']
+          },
+          boxShadow: {
+            'glow-caramel': '0 0 35px -5px rgba(198, 139, 89, 0.35)',
+            'glow-gold': '0 0 35px -5px rgba(223, 192, 117, 0.35)',
+            'inner-glow': 'inset 0 0 20px rgba(255, 227, 179, 0.08)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- GSAP & ScrollTrigger via CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <style>
+    /* Estilos Customizados e Ajustes Finos de UI */
+    ::selection {
+      background-color: #C5A059;
+      color: #0B0C10;
+    }
+
+    /* Glassmorphism Específico */
+    .glass-card {
+      background: rgba(17, 19, 23, 0.72);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .glass-card-light {
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(223, 192, 117, 0.2);
+    }
+
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #FFFFFF 0%, #F9E7BA 40%, #DFC075 80%, #C68B59 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .neon-text-glow {
+      text-shadow: 0 0 10px rgba(255, 227, 179, 0.8), 0 0 20px rgba(212, 154, 106, 0.6), 0 0 40px rgba(198, 139, 89, 0.4);
+    }
+
+    /* Slider de Comparação */
+    .slider-clip-path {
+      clip-path: inset(0 calc(100% - var(--slider-pos, 50%)) 0 0);
+    }
+
+    /* Scrollbar Personalizada */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #07080A;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #232630;
+      border-radius: 4px;
+      border: 1px solid rgba(198, 139, 89, 0.3);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #C68B59;
+    }
+  </style>
+</head>
+
+<body class="bg-noir-950 text-stone-100 font-sans antialiased selection:bg-gold-500 selection:text-noir-950 overflow-x-hidden">
+
+  <!-- ======================================================== -->
+  <!-- BARRA DE TOPO / HEADER DE NAVEGAÇÃO PREMIUM              -->
+  <!-- ======================================================== -->
+  <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4 px-6 md:px-12 bg-noir-950/60 backdrop-blur-xl border-b border-white/5">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      
+      <!-- Logo Marinho Dentistas -->
+      <a href="#" class="group flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-caramel-400 via-gold-400 to-caramel-600 p-[1px] shadow-glow-gold transition-transform group-hover:scale-105">
+          <div class="w-full h-full bg-noir-900 rounded-[11px] flex items-center justify-center">
+            <i class="fa-solid fa-tooth text-gold-300 text-lg"></i>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-title font-bold text-lg md:text-xl tracking-wider uppercase text-white group-hover:text-gold-300 transition-colors">
+            Marinho <span class="font-light text-gold-400">Dentistas</span>
+          </span>
+          <span class="text-[10px] tracking-widest text-stone-400 uppercase -mt-0.5">CRO-MG: 29.408 • Extrema & Toledo</span>
+        </div>
+      </a>
+
+      <!-- Menu Desktop -->
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-medium tracking-wide text-stone-300">
+        <a href="#hero-scroll" class="hover:text-gold-300 transition-colors">A Clínica</a>
+        <a href="#comparador-sorrisos" class="hover:text-gold-300 transition-colors">Transformações</a>
+        <a href="#servicos" class="hover:text-gold-300 transition-colors">Especialidades</a>
+        <a href="#estrutura" class="hover:text-gold-300 transition-colors">Espaço SPA</a>
+        <a href="#depoimentos" class="hover:text-gold-300 transition-colors">Experiência</a>
+        <a href="#unidades" class="hover:text-gold-300 transition-colors">Unidades</a>
+      </nav>
+
+      <!-- Botão CTA Superior & Instagram -->
+      <div class="hidden sm:flex items-center gap-4">
+        <a href="https://www.instagram.com/marinho.dentista?vrfl=ZWV6bHVrbWFveXhy" target="_blank" rel="noopener noreferrer" 
+           class="w-10 h-10 rounded-full border border-white/10 hover:border-gold-400/50 flex items-center justify-center text-stone-300 hover:text-gold-300 transition-all hover:scale-110"
+           title="Instagram @marinho.dentista">
+          <i class="fa-brands fa-instagram text-base"></i>
+        </a>
+        <a href="https://wa.me/553534351690?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Marinho%20Dentistas" target="_blank" rel="noopener noreferrer"
+           class="relative group overflow-hidden rounded-full p-[1px] font-semibold text-xs uppercase tracking-wider">
+          <span class="absolute inset-0 bg-gradient-to-r from-caramel-500 via-gold-400 to-caramel-500 rounded-full group-hover:opacity-100 transition-opacity"></span>
+          <span class="relative block px-6 py-2.5 rounded-full bg-noir-900 group-hover:bg-noir-900/80 text-gold-300 group-hover:text-white transition-all">
+            <i class="fa-brands fa-whatsapp mr-1.5 text-sm text-green-400"></i> Agendar Avaliação
+          </span>
+        </a>
+      </div>
+
+      <!-- Botão Hambúrguer Mobile -->
+      <button id="mobile-menu-btn" class="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 text-stone-300 hover:text-white focus:outline-none">
+        <span class="w-6 h-0.5 bg-current transition-all" id="line1"></span>
+        <span class="w-6 h-0.5 bg-current transition-all" id="line2"></span>
+        <span class="w-6 h-0.5 bg-current transition-all" id="line3"></span>
+      </button>
+
+    </div>
+
+    <!-- Menu Gaveta Mobile -->
+    <div id="mobile-menu" class="hidden lg:hidden flex-col gap-4 pt-6 pb-4 border-t border-white/10 mt-4 text-center">
+      <a href="#hero-scroll" class="mobile-nav-link text-stone-300 hover:text-gold-300 py-1 font-medium">A Clínica</a>
+      <a href="#comparador-sorrisos" class="mobile-nav-link text-stone-300 hover:text-gold-300 py-1 font-medium">Transformações Reais</a>
+      <a href="#servicos" class="mobile-nav-link text-stone-300 hover:text-gold-300 py-1 font-medium">Tratamentos & Tecnologia</a>
+      <a href="#estrutura" class="mobile-nav-link text-stone-300 hover:text-gold-300 py-1 font-medium">Ambiente & Instalações</a>
+      <a href="#depoimentos" class="mobile-nav-link text-stone-300 hover:text-gold-300 py-1 font-medium">Depoimentos</a>
+      <a href="#unidades" class="mobile-nav-link text-stone-300 hover:text-gold-300 py-1 font-medium">Toledo & Extrema</a>
+      <div class="pt-2 flex justify-center gap-4">
+        <a href="https://wa.me/553534351690?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Marinho%20Dentistas" target="_blank"
+           class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-caramel-500 to-gold-500 text-noir-950 font-bold text-xs uppercase tracking-wider shadow-lg">
+          <i class="fa-brands fa-whatsapp text-sm"></i> Fale no WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ======================================================== -->
+  <!-- SEÇÃO 1: HERO / VÍDEO CONTROLADO POR SCROLL (350vh)       -->
+  <!-- ======================================================== -->
+  <section id="hero-scroll" class="relative w-full h-[360vh] bg-noir-950">
+    
+    <!-- Container Sticky da Janela de Visualização (100vh) -->
+    <div id="hero-sticky-stage" class="sticky top-0 w-full h-screen overflow-hidden flex items-center justify-center z-10">
+      
+      <!-- Elemento de Vídeo de Fundo Sincronizado com GSAP -->
+      <video id="hero-video" class="absolute inset-0 w-full h-full object-cover z-0 filter brightness-95 contrast-[1.05]" playsinline webkit-playsinline muted preload="auto">
+        <source src="assets/videos/hero-video.mp4" type="video/mp4">
+        Seu navegador não suporta reprodução de vídeo em HTML5.
+      </video>
+
+      <!-- Gradientes Cinematográficos de Iluminação e Contraste -->
+      <div class="absolute inset-0 bg-gradient-to-t from-noir-950 via-noir-950/40 to-noir-950/70 z-1 pointer-events-none"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-500/10 via-transparent to-noir-950/80 z-1 pointer-events-none"></div>
+
+      <!-- Indicador Superior de Progresso do Tour no Vídeo -->
+      <div class="absolute top-24 left-1/2 -translate-x-1/2 z-20 flex items-center gap-3 bg-noir-950/60 backdrop-blur-md px-5 py-2 rounded-full border border-white/10 text-xs tracking-widest uppercase">
+        <span class="w-2 h-2 rounded-full bg-gold-400 animate-ping"></span>
+        <span class="text-stone-300 font-medium">Tour Imersivo • Role para navegar na clínica</span>
+      </div>
+
+      <!-- ===================================================== -->
+      <!-- OVERLAYS TEXTUAIS EM SEQUÊNCIA CINEMATOGRÁFICA        -->
+      <!-- ===================================================== -->
+
+      <!-- FRAME 1: Fachada Luminosa & Boas-Vindas -->
+      <div id="hero-step-1" class="hero-overlay-card absolute inset-0 flex items-center justify-center p-6 z-20 pointer-events-auto">
+        <div class="max-w-3xl text-center flex flex-col items-center">
+          
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-caramel-500/20 border border-caramel-400/40 text-gold-300 text-xs font-semibold uppercase tracking-widest mb-6 backdrop-blur-md">
+            <i class="fa-solid fa-crown text-amber-400 text-xs"></i> Odontologia de Alta Performance
+          </div>
+
+          <h1 class="font-title text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight uppercase mb-4 leading-none text-white">
+            Marinho <span class="gold-gradient-text font-serif italic normal-case text-5xl sm:text-7xl md:text-8xl font-normal">Dentistas</span>
+          </h1>
+
+          <p class="text-stone-300 text-base sm:text-xl font-light max-w-2xl leading-relaxed mb-8">
+            Uma nova era na odontologia estética em Extrema e Toledo. Onde arte médica, sofisticação arquitetônica e tecnologia 3D se encontram.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center gap-4">
+            <a href="#comparador-sorrisos" class="px-8 py-3.5 rounded-full bg-gradient-to-r from-caramel-500 via-gold-400 to-caramel-500 text-noir-950 font-bold text-sm uppercase tracking-wider hover:shadow-glow-gold hover:scale-105 transition-all">
+              Ver Resultados Reais
+            </a>
+            <div class="flex items-center gap-2 text-stone-400 text-xs tracking-widest uppercase">
+              <i class="fa-solid fa-arrow-down-long text-gold-400 animate-bounce"></i> Role para continuar o tour
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- FRAME 2: Recepção & Painel Botânico/Néon -->
+      <div id="hero-step-2" class="hero-overlay-card absolute inset-0 flex items-center justify-center p-6 z-20 pointer-events-none opacity-0">
+        <div class="glass-card max-w-2xl w-full p-8 sm:p-12 rounded-3xl text-center shadow-2xl border border-gold-400/30">
+          
+          <div class="w-14 h-14 mx-auto mb-6 rounded-2xl bg-amber-500/10 border border-amber-400/30 flex items-center justify-center text-gold-300 text-2xl shadow-glow-caramel">
+            <i class="fa-solid fa-spa"></i>
+          </div>
+
+          <div class="inline-block px-4 py-1 rounded-full bg-white/5 border border-white/10 text-xs tracking-widest text-caramel-300 uppercase mb-4">
+            Atmosfera Acolhedora & Design Biofílico
+          </div>
+
+          <h2 class="font-serif italic text-3xl sm:text-5xl text-white font-normal mb-4 leading-snug neon-text-glow">
+            “Transformamos vidas através do sorriso”
+          </h2>
+
+          <p class="text-stone-300 text-sm sm:text-base font-light leading-relaxed mb-6">
+            Nossa recepção com painel botânico de capim dos pampas, iluminação quente e aromaterapia foi projetada para que sua visita seja um momento de relaxamento e acolhimento total.
+          </p>
+
+          <div class="inline-flex items-center gap-3 text-xs tracking-widest text-gold-400 uppercase font-semibold">
+            <span class="w-8 h-[1px] bg-gold-400/50"></span>
+            Conforto & Bem-Estar em Cada Detalhe
+            <span class="w-8 h-[1px] bg-gold-400/50"></span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- FRAME 3: Sala Clínica / Espelho em Formato de Dente -->
+      <div id="hero-step-3" class="hero-overlay-card absolute inset-0 flex items-center justify-center p-6 z-20 pointer-events-none opacity-0">
+        <div class="glass-card max-w-2xl w-full p-8 sm:p-12 rounded-3xl text-left shadow-2xl border border-white/15 relative overflow-hidden">
+          
+          <!-- Elemento decorativo de fundo -->
+          <div class="absolute -right-10 -bottom-10 w-44 h-44 rounded-full bg-caramel-500/10 blur-2xl pointer-events-none"></div>
+
+          <div class="flex items-center justify-between mb-6">
+            <span class="px-3.5 py-1 rounded-full bg-gold-500/20 border border-gold-400/30 text-gold-300 text-xs tracking-widest uppercase font-semibold">
+              Arquitetura Conceitual
+            </span>
+            <div class="flex items-center gap-1 text-amber-400 text-xs">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+
+          <h2 class="font-title text-2xl sm:text-4xl font-bold uppercase tracking-tight text-white mb-4">
+            Design Exclusivo <span class="font-serif italic font-normal text-gold-300 lowercase text-3xl sm:text-5xl">&</span> Humanização
+          </h2>
+
+          <p class="text-stone-300 text-sm sm:text-base font-light leading-relaxed mb-6">
+            Do nosso icônico espelho entalhado em formato de dente cercado por arte botânica aos consultórios com couro nobre caramelo e iluminação indireta: cada ambiente foi idealizado para transformar a sua relação com o dentista.
+          </p>
+
+          <blockquote class="pl-4 border-l-2 border-caramel-400 text-xs sm:text-sm text-stone-300 italic mb-4">
+            "Você é seu projeto mais importante. INVISTA NISSO!"
+          </blockquote>
+
+        </div>
+      </div>
+
+      <!-- FRAME 4: Escaneamento Digital 3D & Tecnologia + CTA -->
+      <div id="hero-step-4" class="hero-overlay-card absolute inset-0 flex items-center justify-center p-6 z-20 pointer-events-none opacity-0">
+        <div class="glass-card max-w-3xl w-full p-8 sm:p-12 rounded-3xl text-center shadow-2xl border border-gold-400/40">
+          
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-caramel-500/20 border border-caramel-400/40 text-gold-300 text-xs font-semibold uppercase tracking-widest mb-4">
+            <i class="fa-solid fa-microchip text-xs"></i> Precisão Digital Micrométrica
+          </div>
+
+          <h2 class="font-title text-3xl sm:text-5xl font-extrabold uppercase tracking-tight text-white mb-4">
+            Escaneamento 3D <span class="font-serif italic font-normal text-gold-300 lowercase text-4xl sm:text-6xl">&</span> Mockup Virtual
+          </h2>
+
+          <p class="text-stone-300 text-sm sm:text-base font-light leading-relaxed max-w-xl mx-auto mb-8">
+            Adeus moldagens desconfortáveis. Com o fluxo 100% digital, você visualiza o resultado final das suas Lentes de Contato ou Alinhadores antes mesmo de iniciar o procedimento.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="https://wa.me/553534351690?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Marinho%20Dentistas" target="_blank" rel="noopener noreferrer"
+               class="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-caramel-500 via-gold-400 to-caramel-500 text-noir-950 font-bold text-sm uppercase tracking-wider hover:shadow-glow-gold hover:scale-105 transition-all">
+              <i class="fa-brands fa-whatsapp mr-2 text-base"></i> Agende sua Avaliação
+            </a>
+            <a href="#comparador-sorrisos" class="w-full sm:w-auto px-8 py-4 rounded-full bg-white/5 hover:bg-white/10 border border-white/20 text-white font-semibold text-sm uppercase tracking-wider transition-all">
+              Ver Transformações Reais
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Barra de Marcadores e Progresso de Rolagem -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex items-center gap-3">
+        <span id="dot-1" class="w-3 h-3 rounded-full bg-gold-400 transition-all duration-300"></span>
+        <span id="dot-2" class="w-3 h-3 rounded-full bg-white/30 transition-all duration-300"></span>
+        <span id="dot-3" class="w-3 h-3 rounded-full bg-white/30 transition-all duration-300"></span>
+        <span id="dot-4" class="w-3 h-3 rounded-full bg-white/30 transition-all duration-300"></span>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ======================================================== -->
+  <!-- SEÇÃO 2: COMPARADOR INTERATIVO ANTES E DEPOIS            -->
+  <!-- ======================================================== -->
+  <section id="comparador-sorrisos" class="relative py-28 px-6 md:px-12 bg-noir-900 border-t border-b border-white/5 overflow-hidden">
+    
+    <!-- Elementos Luminosos de Fundo (LED Quente) -->
+    <div class="absolute top-1/4 left-10 w-96 h-96 bg-caramel-600/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-10 right-10 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto">
+      
+      <!-- Cabeçalho da Seção -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-500/10 border border-gold-400/30 text-gold-300 text-xs font-semibold uppercase tracking-widest mb-4">
+          <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i> Resultados Reais
+        </div>
+        <h2 class="font-title text-3xl sm:text-5xl font-extrabold uppercase tracking-tight text-white mb-6">
+          A arte de renovar sorrisos: <br>
+          <span class="gold-gradient-text font-serif italic normal-case text-4xl sm:text-6xl font-normal">
+            Veja a transformação real
+          </span>
+        </h2>
+        <p class="text-stone-300 text-base sm:text-lg font-light leading-relaxed">
+          Arraste a linha central para a esquerda ou direita e compare a evolução estética e anatômica através do nosso protocolo personalizado de lentes e restaurações.
+        </p>
+      </div>
+
+      <!-- Container Central do Slider Comparador -->
+      <div class="relative max-w-4xl mx-auto">
+        
+        <!-- Moldura Sofisticada com Borda Iluminada em LED -->
+        <div class="p-1 sm:p-2 rounded-3xl bg-gradient-to-b from-gold-400/40 via-caramel-500/20 to-noir-850 shadow-2xl">
+          
+          <div id="image-compare-container" 
+               class="relative w-full aspect-[16/9] rounded-[22px] overflow-hidden select-none cursor-ew-resize bg-noir-950 shadow-inner"
+               style="--slider-pos: 50%;">
+            
+            <!-- Imagem 1: DEPOIS (Camada Base Completa) -->
+            <img src="assets/images/depois.jpg" 
+                 alt="Depois - Sorriso Transformado com Lentes de Contato na Marinho Dentistas" 
+                 class="absolute inset-0 w-full h-full object-cover pointer-events-none">
+            
+            <!-- Badge Superior Direito: DEPOIS -->
+            <div class="absolute top-4 right-4 z-20 pointer-events-none">
+              <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-noir-950/80 backdrop-blur-md border border-gold-400/40 text-gold-300 text-xs font-bold uppercase tracking-wider shadow-lg">
+                <i class="fa-solid fa-sparkles text-amber-400"></i> Depois • Lentes & Estética
+              </span>
+            </div>
+
+            <!-- Imagem 2: ANTES (Camada Superior Cortada Dinamicamente via CSS clip-path) -->
+            <div class="slider-clip-path absolute inset-0 w-full h-full pointer-events-none">
+              <img src="assets/images/antes.jpg" 
+                   alt="Antes - Sorriso Inicial antes do tratamento na Marinho Dentistas" 
+                   class="absolute inset-0 w-full h-full object-cover">
+            </div>
+
+            <!-- Badge Superior Esquerdo: ANTES -->
+            <div class="absolute top-4 left-4 z-20 pointer-events-none">
+              <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-noir-950/80 backdrop-blur-md border border-white/20 text-stone-300 text-xs font-bold uppercase tracking-wider shadow-lg">
+                Antes • Condição Inicial
+              </span>
+            </div>
+
+            <!-- Linha Divisória Vertical e Alça Interativa -->
+            <div id="slider-handle" 
+                 class="absolute top-0 bottom-0 z-30 pointer-events-none -ml-[1.5px] flex items-center justify-center"
+                 style="left: var(--slider-pos, 50%);">
+              
+              <!-- Linha Vertical Iluminada em LED -->
+              <div class="w-[3px] h-full bg-gradient-to-b from-gold-300 via-amber-400 to-caramel-500 shadow-[0_0_15px_rgba(223,192,117,0.8)]"></div>
+              
+              <!-- Botão Circular Central com Setas Duplas -->
+              <div class="absolute w-12 h-12 rounded-full bg-gradient-to-tr from-caramel-600 via-gold-400 to-amber-300 p-[2px] shadow-[0_0_25px_rgba(212,154,106,0.8)] flex items-center justify-center">
+                <div class="w-full h-full rounded-full bg-noir-950 flex items-center justify-center text-gold-300 text-xs font-black tracking-tighter gap-1">
+                  <span>◀</span>
+                  <span class="text-[9px] text-white">|</span>
+                  <span>▶</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Input invisível de acessibilidade para Teclado e Leitores de Tela -->
+            <input type="range" id="slider-range-input" min="0" max="100" value="50" aria-label="Comparador Antes e Depois" class="sr-only">
+
+          </div>
+        </div>
+
+        <!-- Dica de Interatividade Abaixo do Slider -->
+        <div class="flex flex-col sm:flex-row items-center justify-between mt-6 px-2 text-stone-400 text-xs gap-3">
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-arrows-left-right text-gold-400 text-sm animate-pulse"></i>
+            <span>Clique e arraste ou deslize o dedo para comparar</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="flex items-center gap-1.5 text-stone-300">
+              <i class="fa-solid fa-check text-green-400"></i> Fechamento de Diastema
+            </span>
+            <span class="flex items-center gap-1.5 text-stone-300">
+              <i class="fa-solid fa-check text-green-400"></i> Lentes Ultrafinas
+            </span>
+            <span class="flex items-center gap-1.5 text-stone-300">
+              <i class="fa-solid fa-check text-green-400"></i> Harmonia de Cor Natural
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Métricas & Pilares Clínicos -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
+        
+        <div class="glass-card p-6 rounded-2xl border border-white/5 text-center hover:border-gold-400/30 transition-all hover:-translate-y-1">
+          <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-gold-500/10 flex items-center justify-center text-gold-300 text-xl">
+            <i class="fa-solid fa-gem"></i>
+          </div>
+          <h3 class="font-title font-bold text-lg text-white mb-2 uppercase">Naturalidade Translúcida</h3>
+          <p class="text-stone-400 text-xs leading-relaxed">
+            Nada de dentes artificiais. Nossas cerâmicas reproduzem o brilho, opalescência e textura dos dentes naturais.
+          </p>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl border border-white/5 text-center hover:border-gold-400/30 transition-all hover:-translate-y-1">
+          <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-caramel-500/10 flex items-center justify-center text-caramel-400 text-xl">
+            <i class="fa-solid fa-ruler-combined"></i>
+          </div>
+          <h3 class="font-title font-bold text-lg text-white mb-2 uppercase">Mínimo Desgaste</h3>
+          <p class="text-stone-400 text-xs leading-relaxed">
+            Filosofia minimamente invasiva que preserva ao máximo a estrutura dental sadia através de lentes ultrafinas de 0.2mm a 0.3mm.
+          </p>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl border border-white/5 text-center hover:border-gold-400/30 transition-all hover:-translate-y-1">
+          <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-300 text-xl">
+            <i class="fa-solid fa-laptop-medical"></i>
+          </div>
+          <h3 class="font-title font-bold text-lg text-white mb-2 uppercase">Previsibilidade Total</h3>
+          <p class="text-stone-400 text-xs leading-relaxed">
+            Planejamento estético facial computadorizado para que o novo sorriso harmonize perfeitamente com os traços do seu rosto.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ======================================================== -->
+  <!-- SEÇÃO 3: SERVIÇOS & DIFERENCIAIS DA CLÍNICA              -->
+  <!-- ======================================================== -->
+  <section id="servicos" class="relative py-28 px-6 md:px-12 bg-noir-950">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Cabeçalho -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div>
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-caramel-500/10 border border-caramel-400/30 text-gold-300 text-xs font-semibold uppercase tracking-widest mb-4">
+            <i class="fa-solid fa-stethoscope text-amber-400"></i> Excelência Odontológica
+          </div>
+          <h2 class="font-title text-3xl sm:text-5xl font-extrabold uppercase tracking-tight text-white">
+            Tratamentos <br>
+            <span class="gold-gradient-text font-serif italic normal-case text-4xl sm:text-6xl font-normal">
+              de Alta Complexidade & Estética
+            </span>
+          </h2>
+        </div>
+        <p class="text-stone-400 text-sm max-w-md font-light leading-relaxed">
+          Combinamos protocolos clínicos modernos, materiais nobres importados e tecnologia de ponta para resultados duradouros e funcionais.
+        </p>
+      </div>
+
+      <!-- Grid de Especialidades -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Card 1: Lentes de Contato Dental -->
+        <div class="glass-card group p-8 rounded-3xl border border-white/5 hover:border-gold-400/40 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden flex flex-col justify-between">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-caramel-500/5 rounded-bl-full group-hover:bg-caramel-500/15 transition-all"></div>
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-gold-400/20 to-caramel-500/10 border border-gold-400/30 flex items-center justify-center text-gold-300 text-2xl mb-6 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-teeth"></i>
+            </div>
+            <h3 class="font-title font-bold text-xl text-white uppercase mb-3 group-hover:text-gold-300 transition-colors">
+              Lentes de Contato & Facetas
+            </h3>
+            <p class="text-stone-400 text-sm font-light leading-relaxed mb-6">
+              Correção de formato, espaçamentos, manchas e desgastes com cerâmica pura ou resina estratificada artesanalmente.
+            </p>
+          </div>
+          <ul class="space-y-2 text-xs text-stone-300 pt-4 border-t border-white/10">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-400 text-[10px]"></i> Alta resistência e durabilidade</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-400 text-[10px]"></i> Estabilidade de cor ao longo dos anos</li>
+          </ul>
+        </div>
+
+        <!-- Card 2: Planejamento Digital & 3D -->
+        <div class="glass-card group p-8 rounded-3xl border border-white/5 hover:border-gold-400/40 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden flex flex-col justify-between">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-gold-500/5 rounded-bl-full group-hover:bg-gold-500/15 transition-all"></div>
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-gold-400/20 to-caramel-500/10 border border-gold-400/30 flex items-center justify-center text-gold-300 text-2xl mb-6 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-cube"></i>
+            </div>
+            <h3 class="font-title font-bold text-xl text-white uppercase mb-3 group-hover:text-gold-300 transition-colors">
+              Escaneamento Digital 3D
+            </h3>
+            <p class="text-stone-400 text-sm font-light leading-relaxed mb-6">
+              Captura micrométrica das arcadas em segundos. Diagnóstico sem pastas de moldagem, conforto absoluto e planejamento preciso.
+            </p>
+          </div>
+          <ul class="space-y-2 text-xs text-stone-300 pt-4 border-t border-white/10">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-400 text-[10px]"></i> Teste em boca (Mockup) antes de iniciar</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-400 text-[10px]"></i> Integração total com laboratório digital</li>
+          </ul>
+        </div>
+
+        <!-- Card 3: Clareamento a Laser -->
+        <div class="glass-card group p-8 rounded-3xl border border-white/5 hover:border-gold-400/40 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden flex flex-col justify-between">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-caramel-500/5 rounded-bl-full group-hover:bg-caramel-500/15 transition-all"></div>
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-gold-400/20 to-caramel-500/10 border border-gold-400/30 flex items-center justify-center text-gold-300 text-2xl mb-6 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-sun"></i>
+            </div>
+            <h3 class="font-title font-bold text-xl text-white uppercase mb-3 group-hover:text-gold-300 transition-colors">
+              Clareamento a Laser / Consultório
+            </h3>
+            <p class="text-stone-400 text-sm font-light leading-relaxed mb-6">
+              Protocolos combinados para dentes radiantes e claros com máxima proteção do esmalte e controle de sensibilidade.
+            </p>
+          </div>
+          <ul class="space-y-2 text-xs text-stone-300 pt-4 border-t border-white/10">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-400 text-[10px]"></i> Resultados visíveis na primeira sessão</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-400 text-[10px]"></i> Protocolo dessensibilizante exclusivo</li>
+          </ul>
+        </div>
+
+        <!-- Card 4: Harmonização & Reabilitação Oral -->
+        <div class="glass-card group p-8 rounded-3xl border border-white/5 hover:border-gold-400/40 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden flex flex-col justify-between">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-gold-500/5 rounded-bl-full group-hover:bg-gold-500/15 transition-all"></div>
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-gold-400/20 to-caramel-500/10 border border-gold-400/30 flex items-center justify-center text-gold-300 text-2xl mb-6 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-award"></i>
+            </div>
+            <h3 class="font-title font-bold text-xl text-white uppercase mb-3 group-hover:text-gold-300 transition-colors">
+              Reabilitação Oral Completa
+            </h3>
+            <p class="text-stone-400 text-sm font-light leading-relaxed mb-6">
+              Recuperação de mordida, volume facial e dentes perdidos devolvendo a eficiência mastigatória e jovialidade ao sorriso.
+            </p>
+          </div>
+          <ul class="space-y-2 text-xs text-stone-300 pt-4 border-t border-white/10">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-400 text-[10px]"></i> Implantes guiados sem cortes excessivos</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-400 text-[10px]"></i> Harmonização do sorriso e face</li>
+          </ul>
+        </div>
+
+        <!-- Card 5: Ortodontia com Alinhadores -->
+        <div class="glass-card group p-8 rounded-3xl border border-white/5 hover:border-gold-400/40 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden flex flex-col justify-between">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-caramel-500/5 rounded-bl-full group-hover:bg-caramel-500/15 transition-all"></div>
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-gold-400/20 to-caramel-500/10 border border-gold-400/30 flex items-center justify-center text-gold-300 text-2xl mb-6 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-wand-magic"></i>
+            </div>
+            <h3 class="font-title font-bold text-xl text-white uppercase mb-3 group-hover:text-gold-300 transition-colors">
+              Alinhadores Transparentes
+            </h3>
+            <p class="text-stone-400 text-sm font-light leading-relaxed mb-6">
+              Alinhamento dentário discreto, sem fios metálicos. Placas transparentes removíveis para máxima higiene e praticidade.
+            </p>
+          </div>
+          <ul class="space-y-2 text-xs text-stone-300 pt-4 border-t border-white/10">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-400 text-[10px]"></i> Praticamente imperceptíveis</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-400 text-[10px]"></i> Tratamento até 40% mais ágil</li>
+          </ul>
+        </div>
+
+        <!-- Card 6: Odontologia Humanizada & Conforto -->
+        <div class="glass-card group p-8 rounded-3xl border border-white/5 hover:border-gold-400/40 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden flex flex-col justify-between">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-gold-500/5 rounded-bl-full group-hover:bg-gold-500/15 transition-all"></div>
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-gold-400/20 to-caramel-500/10 border border-gold-400/30 flex items-center justify-center text-gold-300 text-2xl mb-6 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+            <h3 class="font-title font-bold text-xl text-white uppercase mb-3 group-hover:text-gold-300 transition-colors">
+              Atendimento Humanizado SPA
+            </h3>
+            <p class="text-stone-400 text-sm font-light leading-relaxed mb-6">
+              Protocolos de relaxamento para pacientes com fobia de dentista: fones com cancelamento de ruído e anestesia indolor computadorizada.
+            </p>
+          </div>
+          <ul class="space-y-2 text-xs text-stone-300 pt-4 border-t border-white/10">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-400 text-[10px]"></i> Anestesia suave e sem dor</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-400 text-[10px]"></i> Experiência acolhedora e sem pressa</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ======================================================== -->
+  <!-- SEÇÃO 3.1: NOSSA ESTRUTURA & GALERIA DA CLÍNICA REAL     -->
+  <!-- ======================================================== -->
+  <section id="estrutura" class="relative py-28 px-6 md:px-12 bg-noir-900 border-t border-white/5">
+    
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-500/10 border border-gold-400/30 text-gold-300 text-xs font-semibold uppercase tracking-widest mb-4">
+          <i class="fa-solid fa-building text-amber-400"></i> Espaço Físico & Conforto
+        </div>
+        <h2 class="font-title text-3xl sm:text-5xl font-extrabold uppercase tracking-tight text-white mb-6">
+          Conheça Cada Detalhe da <br>
+          <span class="gold-gradient-text font-serif italic normal-case text-4xl sm:text-6xl font-normal">
+            Marinho Dentistas
+          </span>
+        </h2>
+        <p class="text-stone-300 text-base font-light leading-relaxed">
+          Projetada sob medida para acolher. Iluminação aconchegante, marcenaria em tons quentes e materiais nobres compõem um ambiente onde você se sente em um hotel boutique.
+        </p>
+      </div>
+
+      <!-- Galeria Grid com Imagens Reais da Clínica -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Foto 1: Fachada Iluminada -->
+        <div class="group relative rounded-3xl overflow-hidden aspect-[4/5] bg-noir-950 border border-white/10 hover:border-gold-400/50 transition-all duration-500 shadow-xl">
+          <img src="assets/images/clinic-facade-night.jpg" alt="Fachada Noturna Marinho Dentistas" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-noir-950 via-noir-950/20 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 right-6">
+            <span class="text-[10px] uppercase font-bold tracking-widest text-gold-400 bg-black/60 px-2.5 py-1 rounded-md border border-white/10">Fachada Principal</span>
+            <h4 class="font-title font-bold text-lg text-white mt-2">Design Moderno em Extrema</h4>
+            <p class="text-stone-300 text-xs mt-1">Localização nobre no centro com iluminação arquitetônica e fácil acesso.</p>
+          </div>
+        </div>
+
+        <!-- Foto 2: Recepção & Néon Pampas -->
+        <div class="group relative rounded-3xl overflow-hidden aspect-[4/5] bg-noir-950 border border-white/10 hover:border-gold-400/50 transition-all duration-500 shadow-xl">
+          <img src="assets/images/clinic-pampas-neon.jpg" alt="Recepção e Painel Botânico com Néon" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-noir-950 via-noir-950/20 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 right-6">
+            <span class="text-[10px] uppercase font-bold tracking-widest text-caramel-300 bg-black/60 px-2.5 py-1 rounded-md border border-white/10">Recepção Boutique</span>
+            <h4 class="font-title font-bold text-lg text-white mt-2">“Transformamos vidas através do sorriso”</h4>
+            <p class="text-stone-300 text-xs mt-1">Espaço acolhedor com poltrona flor e capim dos pampas.</p>
+          </div>
+        </div>
+
+        <!-- Foto 3: Espelho Formato Dente -->
+        <div class="group relative rounded-3xl overflow-hidden aspect-[4/5] bg-noir-950 border border-white/10 hover:border-gold-400/50 transition-all duration-500 shadow-xl">
+          <img src="assets/images/clinic-mirror-tooth.jpg" alt="Espelho em Formato de Dente Exclusivo" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-noir-950 via-noir-950/20 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 right-6">
+            <span class="text-[10px] uppercase font-bold tracking-widest text-gold-400 bg-black/60 px-2.5 py-1 rounded-md border border-white/10">Arte & Identidade</span>
+            <h4 class="font-title font-bold text-lg text-white mt-2">Espelho Conceitual em Dente</h4>
+            <p class="text-stone-300 text-xs mt-1">Obra de marcenaria botânica exclusiva para fotos do novo sorriso.</p>
+          </div>
+        </div>
+
+        <!-- Foto 4: Sala Clínica e Cadeiras Caramelo -->
+        <div class="group relative rounded-3xl overflow-hidden aspect-[4/5] bg-noir-950 border border-white/10 hover:border-gold-400/50 transition-all duration-500 shadow-xl">
+          <img src="assets/images/clinic-office-caramel.jpg" alt="Consultório com Cadeiras Caramelo e Ripado" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-noir-950 via-noir-950/20 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 right-6">
+            <span class="text-[10px] uppercase font-bold tracking-widest text-caramel-300 bg-black/60 px-2.5 py-1 rounded-md border border-white/10">Consultório Executivo</span>
+            <h4 class="font-title font-bold text-lg text-white mt-2">Conforto em Couro Caramelo</h4>
+            <p class="text-stone-300 text-xs mt-1">Planejamento do tratamento com telas e marcenaria ripada com LED.</p>
+          </div>
+        </div>
+
+        <!-- Foto 5: Lavabo com Luminárias Borboleta -->
+        <div class="group relative rounded-3xl overflow-hidden aspect-[4/5] bg-noir-950 border border-white/10 hover:border-gold-400/50 transition-all duration-500 shadow-xl">
+          <img src="assets/images/clinic-lavatory.jpg" alt="Lavabo Premium com Pendentes de Borboleta" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-noir-950 via-noir-950/20 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 right-6">
+            <span class="text-[10px] uppercase font-bold tracking-widest text-gold-400 bg-black/60 px-2.5 py-1 rounded-md border border-white/10">Toque de Luxo</span>
+            <h4 class="font-title font-bold text-lg text-white mt-2">Lavabo de Alto Padrão</h4>
+            <p class="text-stone-300 text-xs mt-1">Pendente de borboleta de cristal, metais dourados e mármore.</p>
+          </div>
+        </div>
+
+        <!-- Foto 6: Sala de Diagnóstico "Invista Nisso" -->
+        <div class="group relative rounded-3xl overflow-hidden aspect-[4/5] bg-noir-950 border border-white/10 hover:border-gold-400/50 transition-all duration-500 shadow-xl">
+          <img src="assets/images/clinic-office-invista.jpg" alt="Sala de Diagnóstico Invista Nisso" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-noir-950 via-noir-950/20 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 right-6">
+            <span class="text-[10px] uppercase font-bold tracking-widest text-caramel-300 bg-black/60 px-2.5 py-1 rounded-md border border-white/10">Propósito & Autocuidado</span>
+            <h4 class="font-title font-bold text-lg text-white mt-2">“Você é seu projeto mais importante”</h4>
+            <p class="text-stone-300 text-xs mt-1">Ambiente de atendimento dedicado a escutar seus sonhos e necessidades.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ======================================================== -->
+  <!-- SEÇÃO 3.2: UNIDADES TOLEDO & EXTREMA                     -->
+  <!-- ======================================================== -->
+  <section id="unidades" class="relative py-28 px-6 md:px-12 bg-noir-950 border-t border-white/5">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="glass-card rounded-3xl p-8 sm:p-14 border border-gold-400/30 relative overflow-hidden">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          
+          <div>
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-500/10 border border-gold-400/30 text-gold-300 text-xs font-semibold uppercase tracking-widest mb-4">
+              <i class="fa-solid fa-map-pin text-amber-400"></i> Duas Unidades para Melhor Atender
+            </div>
+            <h2 class="font-title text-3xl sm:text-4xl font-extrabold uppercase tracking-tight text-white mb-6">
+              Você já conhece as nossas unidades? <br>
+              <span class="gold-gradient-text font-serif italic normal-case text-4xl sm:text-5xl font-normal">
+                Extrema & Toledo
+              </span>
+            </h2>
+            <p class="text-stone-300 text-sm font-light leading-relaxed mb-8">
+              Levamos a excelência da odontologia estética para a região sul mineira. Escolha a unidade mais conveniente e vivencie um atendimento com hora marcada e sem atrasos.
+            </p>
+
+            <div class="space-y-6">
+              
+              <!-- Unidade 1: Extrema -->
+              <div class="p-5 rounded-2xl bg-white/5 border border-white/10 flex items-start gap-4 hover:border-gold-400/40 transition-colors">
+                <div class="w-10 h-10 rounded-xl bg-gold-500/20 text-gold-300 flex items-center justify-center shrink-0 text-lg">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div>
+                  <h4 class="font-title font-bold text-white text-base uppercase">Unidade Extrema (Matriz)</h4>
+                  <p class="text-stone-300 text-xs mt-1">Rua João Mendes, 103 - Centro, Extrema - MG • CEP: 37640-000</p>
+                  <p class="text-gold-300 text-xs font-semibold mt-1">Telefone: (35) 3435-1690</p>
+                </div>
+              </div>
+
+              <!-- Unidade 2: Toledo -->
+              <div class="p-5 rounded-2xl bg-white/5 border border-white/10 flex items-start gap-4 hover:border-gold-400/40 transition-colors">
+                <div class="w-10 h-10 rounded-xl bg-caramel-500/20 text-caramel-300 flex items-center justify-center shrink-0 text-lg">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div>
+                  <h4 class="font-title font-bold text-white text-base uppercase">Unidade Toledo</h4>
+                  <p class="text-stone-300 text-xs mt-1">Atendimento completo com a mesma tecnologia e acolhimento.</p>
+                  <p class="text-caramel-300 text-xs font-semibold mt-1">Agendamentos integrados via WhatsApp</p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Imagem das Unidades -->
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/15 aspect-[4/5] max-h-[460px]">
+            <img src="assets/images/clinic-facade-units.jpg" alt="Unidades Extrema e Toledo Marinho Dentistas" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-noir-950 via-transparent to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6">
+              <span class="inline-block px-3 py-1 rounded-full bg-black/70 backdrop-blur-md text-xs font-semibold text-gold-300 border border-gold-400/30">
+                Padrão Marinho Dentistas
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ======================================================== -->
+  <!-- SEÇÃO 3.3: DEPOIMENTOS DE PACIENTES                      -->
+  <!-- ======================================================== -->
+  <section id="depoimentos" class="relative py-28 px-6 md:px-12 bg-noir-900 border-t border-white/5">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-500/10 border border-gold-400/30 text-gold-300 text-xs font-semibold uppercase tracking-widest mb-4">
+          <i class="fa-solid fa-comments text-amber-400"></i> Voz de Quem Confia
+        </div>
+        <h2 class="font-title text-3xl sm:text-5xl font-extrabold uppercase tracking-tight text-white mb-4">
+          Histórias Reais de <br>
+          <span class="gold-gradient-text font-serif italic normal-case text-4xl sm:text-6xl font-normal">
+            Autoestima Restaurada
+          </span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Depoimento 1 -->
+        <div class="glass-card p-8 rounded-3xl border border-white/10 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-1 text-amber-400 text-xs mb-4">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-stone-300 text-sm font-light italic leading-relaxed mb-6">
+              "A clínica é surreal de linda, parece que você está em um spa e não num dentista! Fiz minhas lentes de porcelana e o resultado ficou super natural, ninguém percebe que não nasci com esses dentes. Mudou minha autoconfiança no trabalho."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+            <div class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-300 font-bold flex items-center justify-center text-sm border border-gold-400/30">
+              BF
+            </div>
+            <div>
+              <h5 class="font-title font-semibold text-white text-xs">Beatriz Ferraz</h5>
+              <span class="text-[10px] text-stone-400">Paciente Lentes de Contato • Extrema</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Depoimento 2 -->
+        <div class="glass-card p-8 rounded-3xl border border-white/10 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-1 text-amber-400 text-xs mb-4">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-stone-300 text-sm font-light italic leading-relaxed mb-6">
+              "Eu tinha muito pavor de anestesia e dor. Na Marinho Dentistas o atendimento é outro nível, você assiste sua série, escuta música calma e não sente rigorosamente nada. A equipe é de um carinho ímpar!"
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+            <div class="w-10 h-10 rounded-full bg-caramel-500/20 text-caramel-300 font-bold flex items-center justify-center text-sm border border-caramel-400/30">
+              RS
+            </div>
+            <div>
+              <h5 class="font-title font-semibold text-white text-xs">Rodrigo Silveira</h5>
+              <span class="text-[10px] text-stone-400">Paciente Reabilitação e Clareamento • Toledo</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Depoimento 3 -->
+        <div class="glass-card p-8 rounded-3xl border border-white/10 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-1 text-amber-400 text-xs mb-4">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-stone-300 text-sm font-light italic leading-relaxed mb-6">
+              "O escaneamento 3D me deixou de queixo caído. Vi exatamente como o meu sorriso ficaria antes de encostarem na minha boca. Sem moldes nojentos de gesso. O melhor investimento que já fiz em mim mesma!"
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+            <div class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-300 font-bold flex items-center justify-center text-sm border border-gold-400/30">
+              CA
+            </div>
+            <div>
+              <h5 class="font-title font-semibold text-white text-xs">Camila Alcantara</h5>
+              <span class="text-[10px] text-stone-400">Paciente Alinhadores Invisíveis • Extrema</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ======================================================== -->
+  <!-- SEÇÃO 4: CTA FINAL & FORMULÁRIO RÁPIDO WHATSAPP          -->
+  <!-- ======================================================== -->
+  <section id="contato" class="relative py-28 px-6 md:px-12 bg-noir-950 overflow-hidden">
+    
+    <!-- Efeito de Fundo -->
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-500/15 via-transparent to-transparent pointer-events-none"></div>
+
+    <div class="max-w-5xl mx-auto">
+      
+      <div class="glass-card p-8 sm:p-14 rounded-3xl border border-gold-400/40 relative shadow-2xl">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <div class="lg:col-span-7">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-caramel-500/20 border border-caramel-400/40 text-gold-300 text-xs font-semibold uppercase tracking-widest mb-4">
+              <i class="fa-solid fa-calendar-check text-amber-400"></i> Atendimento com Hora Marcada
+            </div>
+            <h2 class="font-title text-3xl sm:text-5xl font-extrabold uppercase tracking-tight text-white mb-4">
+              Dê o primeiro passo para o <br>
+              <span class="gold-gradient-text font-serif italic normal-case text-4xl sm:text-6xl font-normal">
+                sorriso dos seus sonhos
+              </span>
+            </h2>
+            <p class="text-stone-300 text-sm font-light leading-relaxed mb-6">
+              Nossa equipe de especialistas está pronta para analisar o seu caso de forma individualizada e personalizada. Agende uma conversa sem compromisso.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 pt-2">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gold-300">
+                  <i class="fa-solid fa-phone"></i>
+                </div>
+                <div>
+                  <span class="text-[10px] text-stone-400 uppercase tracking-widest">Telefone</span>
+                  <p class="text-sm font-bold text-white">(35) 3435-1690</p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3 sm:ml-4">
+                <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-caramel-300">
+                  <i class="fa-brands fa-instagram"></i>
+                </div>
+                <div>
+                  <span class="text-[10px] text-stone-400 uppercase tracking-widest">Instagram</span>
+                  <a href="https://www.instagram.com/marinho.dentista?vrfl=ZWV6bHVrbWFveXhy" target="_blank" class="text-sm font-bold text-gold-300 hover:underline">@marinho.dentista</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formulário Rápido de Pré-Agendamento com WhatsApp Redirect -->
+          <div class="lg:col-span-5 bg-noir-900/90 p-6 sm:p-8 rounded-2xl border border-white/10 shadow-inner">
+            <h3 class="font-title font-bold text-lg text-white uppercase mb-4 text-center">
+              Agendamento Rápido
+            </h3>
+            
+            <form id="schedule-form" class="space-y-4">
+              <div>
+                <label for="form-name" class="block text-[11px] font-semibold text-stone-400 uppercase mb-1">Seu Nome Completo</label>
+                <input type="text" id="form-name" required placeholder="Ex.: Juliana Silva" 
+                       class="w-full px-4 py-2.5 rounded-xl bg-noir-950 border border-white/15 text-white placeholder-stone-600 text-sm focus:outline-none focus:border-gold-400">
+              </div>
+
+              <div>
+                <label for="form-procedure" class="block text-[11px] font-semibold text-stone-400 uppercase mb-1">Procedimento Desejado</label>
+                <select id="form-procedure" class="w-full px-4 py-2.5 rounded-xl bg-noir-950 border border-white/15 text-white text-sm focus:outline-none focus:border-gold-400">
+                  <option value="Lentes de Contato & Facetas">Lentes de Contato & Facetas</option>
+                  <option value="Clareamento Dental a Laser">Clareamento Dental a Laser</option>
+                  <option value="Alinhadores Invisíveis">Alinhadores Invisíveis</option>
+                  <option value="Avaliação Geral & Escaneamento 3D">Avaliação Geral & Escaneamento 3D</option>
+                  <option value="Reabilitação Oral & Implantes">Reabilitação Oral & Implantes</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="form-unit" class="block text-[11px] font-semibold text-stone-400 uppercase mb-1">Unidade de Preferência</label>
+                <select id="form-unit" class="w-full px-4 py-2.5 rounded-xl bg-noir-950 border border-white/15 text-white text-sm focus:outline-none focus:border-gold-400">
+                  <option value="Extrema (MG)">Unidade Extrema (Rua João Mendes, 103)</option>
+                  <option value="Toledo (MG)">Unidade Toledo</option>
+                </select>
+              </div>
+
+              <button type="submit" 
+                      class="w-full py-3.5 rounded-xl bg-gradient-to-r from-caramel-500 via-gold-400 to-caramel-500 text-noir-950 font-bold text-xs uppercase tracking-wider hover:shadow-glow-gold hover:scale-[1.02] transition-all flex items-center justify-center gap-2 mt-4">
+                <i class="fa-brands fa-whatsapp text-base text-green-950"></i> Enviar Mensagem no WhatsApp
+              </button>
+
+              <p class="text-center text-[10px] text-stone-500 mt-2">
+                Você será redirecionado para o WhatsApp oficial com a sua solicitação.
+              </p>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ======================================================== -->
+  <!-- RODAPÉ INSTITUCIONAL                                     -->
+  <!-- ======================================================== -->
+  <footer class="bg-noir-950 border-t border-white/10 pt-16 pb-12 px-6 md:px-12 text-stone-400 text-xs">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+        
+        <!-- Coluna 1: Sobre & CRO -->
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-caramel-400 to-gold-400 p-[1px]">
+              <div class="w-full h-full bg-noir-900 rounded-[7px] flex items-center justify-center">
+                <i class="fa-solid fa-tooth text-gold-300 text-sm"></i>
+              </div>
+            </div>
+            <span class="font-title font-bold text-base uppercase text-white tracking-wider">
+              Marinho <span class="font-light text-gold-400">Dentistas</span>
+            </span>
+          </div>
+          <p class="text-stone-400 font-light max-w-md leading-relaxed mb-4">
+            Transformamos vidas através do sorriso. Odontologia de alto padrão, acolhimento humanizado, tecnologia 3D e precisão estética.
+          </p>
+          <p class="text-stone-300 font-medium">
+            Registro Clínico: <span class="text-gold-400">CRO-MG: 29.408</span>
+          </p>
+        </div>
+
+        <!-- Coluna 2: Navegação -->
+        <div>
+          <h4 class="font-title font-bold text-white text-xs uppercase tracking-widest mb-4">Navegação</h4>
+          <ul class="space-y-2.5 font-light">
+            <li><a href="#hero-scroll" class="hover:text-gold-300 transition-colors">A Clínica</a></li>
+            <li><a href="#comparador-sorrisos" class="hover:text-gold-300 transition-colors">Antes & Depois</a></li>
+            <li><a href="#servicos" class="hover:text-gold-300 transition-colors">Tratamentos</a></li>
+            <li><a href="#estrutura" class="hover:text-gold-300 transition-colors">Ambiente SPA</a></li>
+            <li><a href="#unidades" class="hover:text-gold-300 transition-colors">Extrema & Toledo</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 3: Endereço & Horários -->
+        <div>
+          <h4 class="font-title font-bold text-white text-xs uppercase tracking-widest mb-4">Unidade Extrema</h4>
+          <p class="font-light leading-relaxed mb-3">
+            Rua João Mendes, 103 - Centro<br>
+            Extrema - MG • CEP: 37640-000<br>
+            Telefone: (35) 3435-1690
+          </p>
+          <p class="font-light leading-relaxed text-stone-500">
+            Segunda a Sexta: 08h às 19h<br>
+            Sábados: 08h às 13h (Com agendamento)
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Linha Final de Copyright -->
+      <div class="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-stone-300">
+        <p>© 2026 Marinho Dentistas. Todos os direitos reservados.</p>
+        <div class="flex items-center gap-6">
+          <a href="https://www.instagram.com/marinho.dentista?vrfl=ZWV6bHVrbWFveXhy" target="_blank" rel="noopener noreferrer" class="hover:text-gold-400 transition-colors">
+            <i class="fa-brands fa-instagram text-sm mr-1"></i> @marinho.dentista
+          </a>
+          <span>Design & Engenharia Front-end Premium</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ======================================================== -->
+  <!-- BOTÃO FLUTUANTE DO WHATSAPP (CANTO INFERIOR DIREITO)     -->
+  <!-- ======================================================== -->
+  <a href="https://wa.me/553534351690?text=Ol%C3%A1%2C%20estou%20no%20site%20da%20Marinho%20Dentistas%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o" 
+     target="_blank" 
+     rel="noopener noreferrer"
+     aria-label="Fale conosco no WhatsApp"
+     class="fixed bottom-6 right-6 z-50 group flex items-center gap-3">
+    
+    <!-- Tooltip Flutuante -->
+    <span class="hidden sm:inline-block px-4 py-2 rounded-full bg-noir-900/90 backdrop-blur-md border border-gold-400/30 text-gold-300 text-xs font-semibold shadow-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-2 group-hover:translate-x-0">
+      Agende sua Avaliação ✨
+    </span>
+
+    <!-- Botão com Ícone e Pulso -->
+    <div class="relative w-14 h-14 rounded-full bg-gradient-to-tr from-green-600 to-emerald-400 text-white flex items-center justify-center text-2xl shadow-[0_0_25px_rgba(16,185,129,0.5)] group-hover:scale-110 transition-transform duration-300">
+      <span class="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-30"></span>
+      <i class="fa-brands fa-whatsapp relative z-10"></i>
+      <!-- Badge de Notificação -->
+      <span class="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-amber-400 text-noir-950 font-black text-[10px] flex items-center justify-center border-2 border-noir-950">
+        1
+      </span>
+    </div>
+  </a>
+
+
+  <!-- ======================================================== -->
+  <!-- SCRIPTS JAVASCRIPT: GSAP SCROLLTRIGGER + COMPARADOR      -->
+  <!-- ======================================================== -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Registrar Plugin ScrollTrigger do GSAP
+      gsap.registerPlugin(ScrollTrigger);
+
+      // ========================================================
+      // 1. MENU MOBILE TOGGLE
+      // ========================================================
+      const mobileBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const navLinks = document.querySelectorAll(".mobile-nav-link");
+
+      if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+          mobileMenu.classList.toggle("flex");
+        });
+
+        navLinks.forEach(link => {
+          link.addEventListener("click", () => {
+            mobileMenu.classList.add("hidden");
+            mobileMenu.classList.remove("flex");
+          });
+        });
+      }
+
+      // ========================================================
+      // 2. CONTROLE DO VÍDEO POR SCROLLTRIGGER (SCROLL-BOUND)
+      // ========================================================
+      const heroVideo = document.getElementById("hero-video");
+      const heroSection = document.getElementById("hero-scroll");
+
+      function setupVideoScroll() {
+        const videoDuration = heroVideo.duration || 9;
+
+        // Pausa o vídeo nativamente para o GSAP assumir o controle total do currentTime
+        heroVideo.pause();
+
+        // Linha do tempo mestre acoplada rigidamente ao ScrollTrigger
+        const heroTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: heroSection,
+            start: "top top",
+            end: "bottom bottom",
+            scrub: 0.8, // Amortecimento suave para evitar saltos bruscos
+            onUpdate: (self) => {
+              // Atualiza os marcadores de progresso visuais (dots)
+              const p = self.progress;
+              const dots = [
+                document.getElementById("dot-1"),
+                document.getElementById("dot-2"),
+                document.getElementById("dot-3"),
+                document.getElementById("dot-4")
+              ];
+              const activeIndex = Math.min(3, Math.floor(p * 4));
+              dots.forEach((dot, idx) => {
+                if (dot) {
+                  if (idx === activeIndex) {
+                    dot.className = "w-6 h-3 rounded-full bg-gold-400 transition-all duration-300";
+                  } else {
+                    dot.className = "w-3 h-3 rounded-full bg-white/30 transition-all duration-300";
+                  }
+                }
+              });
+            }
+          }
+        });
+
+        // Scrub do progresso de reprodução do vídeo
+        heroTl.fromTo(heroVideo, { currentTime: 0.01 }, { currentTime: videoDuration, ease: "none" }, 0);
+
+        // --- OVERLAY 1: Fachada & Boas-Vindas (0% a 22%) ---
+        heroTl.to("#hero-step-1", {
+          opacity: 0,
+          y: -40,
+          scale: 0.95,
+          pointerEvents: "none",
+          duration: 0.15,
+          ease: "power2.inOut"
+        }, 0.12);
+
+        // --- OVERLAY 2: Recepção & Néon "Transformamos vidas..." (22% a 48%) ---
+        heroTl.to("#hero-step-2", {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          pointerEvents: "auto",
+          duration: 0.12,
+          ease: "power2.out"
+        }, 0.22);
+        heroTl.to("#hero-step-2", {
+          opacity: 0,
+          y: -40,
+          scale: 0.95,
+          pointerEvents: "none",
+          duration: 0.12,
+          ease: "power2.in"
+        }, 0.44);
+
+        // --- OVERLAY 3: Sala Clínica & Espelho Dente (48% a 74%) ---
+        heroTl.to("#hero-step-3", {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          pointerEvents: "auto",
+          duration: 0.12,
+          ease: "power2.out"
+        }, 0.50);
+        heroTl.to("#hero-step-3", {
+          opacity: 0,
+          y: -40,
+          scale: 0.95,
+          pointerEvents: "none",
+          duration: 0.12,
+          ease: "power2.in"
+        }, 0.72);
+
+        // --- OVERLAY 4: Tecnologia 3D & CTA Final (74% a 100%) ---
+        heroTl.to("#hero-step-4", {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          pointerEvents: "auto",
+          duration: 0.15,
+          ease: "power2.out"
+        }, 0.78);
+      }
+
+      // Previne bugs de cálculo aguardando carregar os metadados do vídeo
+      if (heroVideo.readyState >= 1) {
+        setupVideoScroll();
+      } else {
+        heroVideo.addEventListener("loadedmetadata", setupVideoScroll, { once: true });
+        // Fallback de segurança caso loadedmetadata demore em conexões lentas
+        setTimeout(() => {
+          if (!ScrollTrigger.getById("hero-scroll")) {
+            setupVideoScroll();
+          }
+        }, 1200);
+      }
+
+      // ========================================================
+      // 3. COMPARADOR INTERATIVO ANTES E DEPOIS (DRAG & TOUCH)
+      // ========================================================
+      const compareContainer = document.getElementById("image-compare-container");
+      const rangeInput = document.getElementById("slider-range-input");
+      let isDragging = false;
+
+      function updateSliderPosition(clientX) {
+        if (!compareContainer) return;
+        const rect = compareContainer.getBoundingClientRect();
+        const offsetX = clientX - rect.left;
+        let percentage = (offsetX / rect.width) * 100;
+
+        // Limita a porcentagem entre 0% e 100%
+        percentage = Math.max(0, Math.min(100, percentage));
+
+        // Aplica a variável CSS que controla a alça e o clip-path
+        compareContainer.style.setProperty("--slider-pos", `${percentage}%`);
+        if (rangeInput) rangeInput.value = percentage;
+      }
+
+      if (compareContainer) {
+        // Eventos Mouse
+        compareContainer.addEventListener("mousedown", (e) => {
+          isDragging = true;
+          updateSliderPosition(e.clientX);
+        });
+
+        window.addEventListener("mousemove", (e) => {
+          if (!isDragging) return;
+          updateSliderPosition(e.clientX);
+        });
+
+        window.addEventListener("mouseup", () => {
+          isDragging = false;
+        });
+
+        // Eventos Touch (Mobile)
+        compareContainer.addEventListener("touchstart", (e) => {
+          isDragging = true;
+          if (e.touches.length > 0) {
+            updateSliderPosition(e.touches[0].clientX);
+          }
+        }, { passive: true });
+
+        window.addEventListener("touchmove", (e) => {
+          if (!isDragging) return;
+          if (e.touches.length > 0) {
+            updateSliderPosition(e.touches[0].clientX);
+          }
+        }, { passive: true });
+
+        window.addEventListener("touchend", () => {
+          isDragging = false;
+        });
+
+        // Acessibilidade por Teclado
+        if (rangeInput) {
+          rangeInput.addEventListener("input", (e) => {
+            compareContainer.style.setProperty("--slider-pos", `${e.target.value}%`);
+          });
+        }
+      }
+
+      // ========================================================
+      // 4. ENVIO DO FORMULÁRIO DE AGENDAMENTO VIA WHATSAPP
+      // ========================================================
+      const scheduleForm = document.getElementById("schedule-form");
+      if (scheduleForm) {
+        scheduleForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const name = document.getElementById("form-name").value.trim();
+          const procedure = document.getElementById("form-procedure").value;
+          const unit = document.getElementById("form-unit").value;
+
+          const text = `Olá, Marinho Dentistas! Meu nome é *${name}*.\n\nGostaria de agendar uma avaliação para *${procedure}* na *Unidade ${unit}*.\n\nComo posso prosseguir com o agendamento?`;
+          const encoded = encodeURIComponent(text);
+          window.open(`https://wa.me/553534351690?text=${encoded}`, "_blank");
+        });
+      }
+
+    });
+  </script>
+
+</body>
+</html>
+
