@@ -12,7 +12,7 @@
   <meta property="og:description" content="Transformamos vidas através do sorriso. Tecnologia digital, lentes cerâmicas e arquitetura acolhedora em Extrema e Toledo.">
   <meta property="og:image" content="assets/images/clinic-facade-night.jpg">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#020617">
+  <meta name="theme-color" content="#070B14">
 
   <!-- Google Fonts: Plus Jakarta Sans & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,6 +29,11 @@
       theme: {
         extend: {
           colors: {
+            deep: {
+              900: '#0C1322',
+              950: '#070B14',
+              990: '#04070D'
+            },
             brand: {
               50: '#F0F9FF',
               100: '#E0F2FE',
@@ -38,11 +43,6 @@
               500: '#0EA5E9',
               600: '#0284C7',
               700: '#0369A1'
-            },
-            space: {
-              900: '#0A1128',
-              950: '#060B18',
-              990: '#03060E'
             }
           },
           fontFamily: {
@@ -59,10 +59,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
   <style>
-    /* Estilos Gerais e Ajustes Finos */
+    /* Estilos Globais do Tema Dark Contínuo */
     ::selection {
       background-color: #38BDF8;
-      color: #060B18;
+      color: #070B14;
     }
 
     /* Slider de Comparação Antes/Depois */
@@ -70,7 +70,7 @@
       clip-path: inset(0 calc(100% - var(--slider-pos, 50%)) 0 0);
     }
 
-    /* Canvas 3D sem outline */
+    /* Three.js Canvas */
     #three-viewport canvas {
       outline: none;
       display: block;
@@ -78,12 +78,12 @@
       height: 100% !important;
     }
 
-    /* Scrollbar sutil */
+    /* Scrollbar sutil e minimalista */
     ::-webkit-scrollbar {
       width: 6px;
     }
     ::-webkit-scrollbar-track {
-      background: #060B18;
+      background: #070B14;
     }
     ::-webkit-scrollbar-thumb {
       background: #1E293B;
@@ -95,44 +95,44 @@
   </style>
 </head>
 
-<body class="bg-white text-slate-800 font-sans antialiased overflow-x-hidden">
+<body class="bg-deep-950 text-slate-200 font-sans antialiased selection:bg-brand-400 selection:text-deep-950 overflow-x-hidden">
 
   <!-- ======================================================== -->
-  <!-- 1. NAVBAR TRANSPARENTE E SEM CORTES SECOS                -->
+  <!-- 1. NAVBAR DINÂMICA INTEGRADA (SEM CORTES OU BORDAS SECAS)-->
   <!-- ======================================================== -->
   <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 py-6 px-6 md:px-12 bg-transparent text-white">
     <div class="max-w-6xl mx-auto flex items-center justify-between">
       
       <!-- Logo Minimalista -->
       <a href="#" class="flex items-center gap-2.5 group drop-shadow-sm">
-        <div class="w-8 h-8 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-sky-300 transition-all group-hover:scale-105 group-hover:bg-brand-500 group-hover:text-white">
+        <div class="w-8 h-8 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-sky-400 transition-all group-hover:scale-105 group-hover:bg-brand-500 group-hover:text-white">
           <i class="fa-solid fa-tooth text-sm"></i>
         </div>
         <div class="flex flex-col">
           <span class="font-bold text-base tracking-tight text-white leading-none">
-            MARINHO <span class="font-light text-sky-300">DENTISTAS</span>
+            MARINHO <span class="font-light text-sky-400">DENTISTAS</span>
           </span>
-          <span class="text-[9px] uppercase tracking-widest text-white/70 mt-0.5">Extrema & Toledo</span>
+          <span class="text-[9px] uppercase tracking-widest text-slate-400 mt-0.5">Extrema & Toledo</span>
         </div>
       </a>
 
       <!-- Menu Desktop -->
-      <nav class="hidden md:flex items-center gap-8 text-xs font-medium tracking-wider uppercase text-white/80 drop-shadow-sm">
-        <a href="#hero-scroll" class="hover:text-sky-300 transition-colors">A Clínica</a>
-        <a href="#experiencia-3d" class="hover:text-sky-300 transition-colors">Tecnologia 3D</a>
-        <a href="#diferenciais" class="hover:text-sky-300 transition-colors">Diferenciais</a>
-        <a href="#como-funciona" class="hover:text-sky-300 transition-colors">Tratamento</a>
-        <a href="#resultados" class="hover:text-sky-300 transition-colors">Resultados</a>
-        <a href="#faq" class="hover:text-sky-300 transition-colors">Dúvidas</a>
-        <a href="#unidades" class="hover:text-sky-300 transition-colors">Unidades</a>
+      <nav class="hidden md:flex items-center gap-8 text-xs font-medium tracking-wider uppercase text-slate-300 drop-shadow-sm">
+        <a href="#hero-scroll" class="hover:text-sky-400 transition-colors">A Clínica</a>
+        <a href="#experiencia-3d" class="hover:text-sky-400 transition-colors">Tecnologia 3D</a>
+        <a href="#diferenciais" class="hover:text-sky-400 transition-colors">Diferenciais</a>
+        <a href="#como-funciona" class="hover:text-sky-400 transition-colors">Tratamento</a>
+        <a href="#resultados" class="hover:text-sky-400 transition-colors">Resultados</a>
+        <a href="#faq" class="hover:text-sky-400 transition-colors">Dúvidas</a>
+        <a href="#unidades" class="hover:text-sky-400 transition-colors">Unidades</a>
       </nav>
 
       <!-- Botão CTA Discreto no Header -->
       <div class="flex items-center gap-3">
         <a href="https://wa.me/553534351690?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Marinho%20Dentistas" target="_blank" rel="noopener noreferrer"
-           class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/15 hover:bg-brand-500 backdrop-blur-md border border-white/20 text-white text-xs font-semibold uppercase tracking-wider transition-all duration-300 shadow-sm hover:scale-105">
+           class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 hover:bg-brand-500 backdrop-blur-md border border-white/20 text-white text-xs font-semibold uppercase tracking-wider transition-all duration-300 shadow-sm hover:scale-105">
           <span>Agendar</span>
-          <i class="fa-solid fa-arrow-right text-[10px] text-sky-200"></i>
+          <i class="fa-solid fa-arrow-right text-[10px] text-sky-300"></i>
         </a>
       </div>
 
@@ -148,19 +148,22 @@
     <!-- Janela de visualização fixa (Sticky 100vh) -->
     <div id="hero-sticky" class="sticky top-0 w-full h-screen overflow-hidden flex items-center justify-center">
       
-      <!-- Vídeo ocupando tela cheia limpa -->
+      <!-- Vídeo ocupando a tela cheia -->
       <video id="hero-video" class="absolute inset-0 w-full h-full object-cover filter brightness-[0.85] contrast-[1.05]" playsinline webkit-playsinline muted preload="auto">
         <source src="assets/videos/hero-video.mp4" type="video/mp4">
       </video>
 
-      <!-- Gradiente cinematográfico suave para legibilidade sem cortar o topo -->
-      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/40 pointer-events-none"></div>
+      <!-- Gradiente cinematográfico superior -->
+      <div class="absolute inset-0 bg-gradient-to-t from-deep-950/90 via-black/30 to-black/50 pointer-events-none"></div>
+
+      <!-- MÁSCARA DE TRANSIÇÃO SUAVE (HERO -> SEÇÃO 3D) -->
+      <div class="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-b from-transparent via-deep-950/60 to-deep-950 pointer-events-none z-10"></div>
 
       <!-- Indicador sutil de início de scroll -->
-      <div id="initial-scroll-hint" class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-white/70 text-xs font-light tracking-widest uppercase transition-opacity duration-500 pointer-events-none">
+      <div id="initial-scroll-hint" class="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-white/70 text-xs font-light tracking-widest uppercase transition-opacity duration-500 pointer-events-none">
         <span>Role para conhecer</span>
         <div class="w-4 h-7 rounded-full border border-white/40 flex items-start justify-center p-1">
-          <div class="w-1 h-2 bg-sky-300 rounded-full animate-bounce"></div>
+          <div class="w-1 h-2 bg-sky-400 rounded-full animate-bounce"></div>
         </div>
       </div>
 
@@ -176,7 +179,7 @@
           </span>
           <h1 class="text-3xl sm:text-5xl md:text-6xl font-light tracking-tight text-white leading-tight">
             “Transformamos vidas <br>
-            <span class="font-normal text-sky-200">através do sorriso”</span>
+            <span class="font-normal text-sky-300">através do sorriso”</span>
           </h1>
         </div>
       </div>
@@ -204,7 +207,7 @@
           </span>
           <p class="text-2xl sm:text-4xl font-light tracking-tight text-white leading-snug">
             Tecnologia 3D e cerâmicas nobres. <br>
-            <span class="text-sky-200 text-lg sm:text-xl font-light mt-2 block">
+            <span class="text-sky-300 text-lg sm:text-xl font-light mt-2 block">
               Diagnóstico computadorizado e lentes com precisão microscópica.
             </span>
           </p>
@@ -216,15 +219,15 @@
 
 
   <!-- ======================================================== -->
-  <!-- 3. SEÇÃO 3D INTERATIVA (FUNDO ESCURO & ALTO CONTRASTE)   -->
+  <!-- 3. SEÇÃO 3D INTERATIVA (TEMA DARK UNIFICADO)             -->
   <!-- ======================================================== -->
-  <section id="experiencia-3d" class="relative py-28 px-6 md:px-12 bg-space-950 text-white overflow-hidden border-t border-b border-slate-800">
+  <section id="experiencia-3d" class="relative py-28 px-6 md:px-12 bg-deep-950 text-white overflow-hidden">
     
-    <!-- Elementos de iluminação ambiente do container -->
-    <div class="absolute -top-32 -left-32 w-96 h-96 bg-brand-600/15 rounded-full blur-3xl pointer-events-none"></div>
+    <!-- Brilho radial ambiente sutil -->
+    <div class="absolute -top-32 -left-32 w-96 h-96 bg-brand-600/10 rounded-full blur-3xl pointer-events-none"></div>
     <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
-    <div class="max-w-6xl mx-auto">
+    <div class="max-w-6xl mx-auto relative z-10">
       
       <!-- Cabeçalho -->
       <div class="max-w-xl mb-12">
@@ -242,29 +245,29 @@
       <!-- Grade: Canvas 3D e Card Explicativo -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         
-        <!-- Viewport 3D em Fundo Escuro Tecnológico -->
+        <!-- Viewport 3D Integrado ao Fundo Escuro -->
         <div class="lg:col-span-7 relative">
-          <div class="relative w-full aspect-[4/3] rounded-3xl bg-gradient-to-b from-space-900 to-space-990 border border-slate-800 shadow-[0_20px_50px_rgba(0,0,0,0.6)] overflow-hidden" id="dental-canvas-container">
+          <div class="relative w-full aspect-[4/3] rounded-3xl bg-slate-900/40 backdrop-blur-md border border-slate-800/80 shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden" id="dental-canvas-container">
             
             <!-- Canvas Three.js -->
             <div id="three-viewport" class="w-full h-full cursor-grab active:cursor-grabbing"></div>
 
-            <!-- Scanner Beam Animado (Linha Laser Tecnológica) -->
+            <!-- Scanner Beam Animado (Linha Laser) -->
             <div id="scanner-laser" class="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-60 shadow-[0_0_12px_#22d3ee] pointer-events-none transition-all duration-700"></div>
 
             <!-- Badge Interativa -->
-            <div class="absolute bottom-4 left-4 z-10 flex items-center gap-2 bg-space-950/80 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-slate-700 text-[11px] text-slate-300 font-medium pointer-events-none">
+            <div class="absolute bottom-4 left-4 z-10 flex items-center gap-2 bg-slate-950/80 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-slate-700/60 text-[11px] text-slate-300 font-medium pointer-events-none">
               <i class="fa-solid fa-arrows-rotate text-cyan-400 text-xs animate-spin" style="animation-duration: 8s;"></i>
               <span>Arraste com o mouse para girar 360°</span>
             </div>
 
             <!-- Botões de Ação do 3D -->
             <div class="absolute top-4 right-4 z-10 flex items-center gap-2">
-              <button id="toggle-scan-btn" class="px-3 py-1 rounded-full bg-space-950/80 backdrop-blur-md border border-slate-700 text-slate-300 hover:text-cyan-300 hover:border-cyan-500/50 text-xs transition-colors flex items-center gap-1.5" title="Ativar laser de escaneamento">
+              <button id="toggle-scan-btn" class="px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md border border-slate-700/60 text-slate-300 hover:text-cyan-300 hover:border-cyan-500/50 text-xs transition-colors flex items-center gap-1.5" title="Ativar laser de escaneamento">
                 <i class="fa-solid fa-laser text-[10px] text-cyan-400"></i>
                 <span class="text-[11px]">Scan</span>
               </button>
-              <button id="reset-3d-btn" class="w-7 h-7 rounded-full bg-space-950/80 backdrop-blur-md border border-slate-700 text-slate-300 hover:text-cyan-300 hover:border-cyan-500/50 flex items-center justify-center text-xs transition-colors" title="Centralizar visualização">
+              <button id="reset-3d-btn" class="w-7 h-7 rounded-full bg-slate-950/80 backdrop-blur-md border border-slate-700/60 text-slate-300 hover:text-cyan-300 hover:border-cyan-500/50 flex items-center justify-center text-xs transition-colors" title="Centralizar visualização">
                 <i class="fa-solid fa-crosshairs"></i>
               </button>
             </div>
@@ -274,7 +277,7 @@
 
         <!-- Card Explicativo de Alto Padrão -->
         <div class="lg:col-span-5">
-          <div class="bg-space-900/90 backdrop-blur-xl p-8 sm:p-10 rounded-3xl border border-slate-800 space-y-6 shadow-xl">
+          <div class="bg-slate-900/60 backdrop-blur-xl p-8 sm:p-10 rounded-3xl border border-slate-800/80 space-y-6 shadow-xl">
             
             <div class="w-10 h-10 rounded-xl bg-brand-500/10 border border-brand-500/30 text-sky-400 flex items-center justify-center text-base">
               <i class="fa-solid fa-cube"></i>
@@ -293,7 +296,7 @@
             </div>
 
             <!-- Métricas Técnicas -->
-            <div class="pt-4 border-t border-slate-800 space-y-3 text-xs text-slate-300 font-light">
+            <div class="pt-4 border-t border-slate-800/80 space-y-3 text-xs text-slate-300 font-light">
               <div class="flex items-center justify-between">
                 <span class="text-slate-400">Espessura cerâmica</span>
                 <span class="font-medium text-white">0.2mm a 0.4mm (Ultrafina)</span>
@@ -310,7 +313,7 @@
 
             <div class="pt-2">
               <a href="https://wa.me/553534351690?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20as%20lentes%20digitais%20na%20Marinho%20Dentistas" target="_blank" rel="noopener noreferrer"
-                 class="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-medium text-xs uppercase tracking-wider transition-all duration-200 shadow-lg shadow-brand-600/20">
+                 class="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold text-xs uppercase tracking-wider transition-all duration-200 shadow-lg shadow-sky-500/20">
                 <span>Simular Meu Sorriso no WhatsApp</span>
                 <i class="fa-brands fa-whatsapp text-sm"></i>
               </a>
@@ -328,78 +331,78 @@
   <!-- ======================================================== -->
   <!-- 4. TECNOLOGIA & EXPERIÊNCIA MARINHO (GRID DIFERENCIAIS)   -->
   <!-- ======================================================== -->
-  <section id="diferenciais" class="py-24 px-6 md:px-12 bg-slate-50 border-b border-slate-200">
+  <section id="diferenciais" class="py-24 px-6 md:px-12 bg-deep-950 border-t border-slate-800/60">
     <div class="max-w-6xl mx-auto">
       
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <span class="text-xs uppercase font-semibold tracking-widest text-brand-600 block mb-2">
+        <span class="text-xs uppercase font-semibold tracking-widest text-sky-400 block mb-2">
           Diferenciais Exclusivos
         </span>
-        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900">
+        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-white">
           Tecnologia & Experiência Marinho
         </h2>
-        <p class="text-slate-500 text-sm font-light mt-3 leading-relaxed">
+        <p class="text-slate-400 text-sm font-light mt-3 leading-relaxed">
           Unimos protocolos clínicos internacionais a uma arquitetura humanizada para que seu tratamento seja previsível, rápido e acolhedor.
         </p>
       </div>
 
-      <!-- Grid com 4 Cards Modernos -->
+      <!-- Grid com 4 Cards em Fundo Escuro Coeso -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         
         <!-- Card 1 -->
-        <div class="bg-white p-7 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-300 transition-all duration-300 flex flex-col justify-between">
+        <div class="bg-slate-900/40 backdrop-blur-md p-7 rounded-2xl border border-slate-800/80 shadow-sm hover:border-sky-500/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
           <div>
-            <div class="w-12 h-12 rounded-xl bg-sky-50 text-brand-600 flex items-center justify-center text-xl mb-5">
+            <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center text-xl mb-5 border border-sky-500/20">
               <i class="fa-solid fa-camera-rotate"></i>
             </div>
-            <h3 class="font-semibold text-base text-slate-900 mb-2">Scanner Intraoral 3D</h3>
-            <p class="text-slate-500 text-xs leading-relaxed font-light">
+            <h3 class="font-semibold text-base text-white mb-2">Scanner Intraoral 3D</h3>
+            <p class="text-slate-400 text-xs leading-relaxed font-light">
               Elimina as moldagens com massa desconfortável. Captura digital rápida com precisão micrométrica da sua arcada.
             </p>
           </div>
-          <span class="text-[11px] text-brand-600 font-medium mt-6 block">Conforto absoluto</span>
+          <span class="text-[11px] text-sky-400 font-medium mt-6 block">Conforto absoluto</span>
         </div>
 
         <!-- Card 2 -->
-        <div class="bg-white p-7 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-300 transition-all duration-300 flex flex-col justify-between">
+        <div class="bg-slate-900/40 backdrop-blur-md p-7 rounded-2xl border border-slate-800/80 shadow-sm hover:border-sky-500/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
           <div>
-            <div class="w-12 h-12 rounded-xl bg-sky-50 text-brand-600 flex items-center justify-center text-xl mb-5">
+            <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center text-xl mb-5 border border-sky-500/20">
               <i class="fa-solid fa-laptop-medical"></i>
             </div>
-            <h3 class="font-semibold text-base text-slate-900 mb-2">Planejamento Digital</h3>
-            <p class="text-slate-500 text-xs leading-relaxed font-light">
+            <h3 class="font-semibold text-base text-white mb-2">Planejamento Digital</h3>
+            <p class="text-slate-400 text-xs leading-relaxed font-light">
               Simulação estética computadorizada. Você valida e aprova o desenho do seu novo sorriso antes de iniciar o procedimento.
             </p>
           </div>
-          <span class="text-[11px] text-brand-600 font-medium mt-6 block">Previsibilidade total</span>
+          <span class="text-[11px] text-sky-400 font-medium mt-6 block">Previsibilidade total</span>
         </div>
 
         <!-- Card 3 -->
-        <div class="bg-white p-7 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-300 transition-all duration-300 flex flex-col justify-between">
+        <div class="bg-slate-900/40 backdrop-blur-md p-7 rounded-2xl border border-slate-800/80 shadow-sm hover:border-sky-500/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
           <div>
-            <div class="w-12 h-12 rounded-xl bg-sky-50 text-brand-600 flex items-center justify-center text-xl mb-5">
+            <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center text-xl mb-5 border border-sky-500/20">
               <i class="fa-solid fa-gem"></i>
             </div>
-            <h3 class="font-semibold text-base text-slate-900 mb-2">Cerâmicas Ultrafinas</h3>
-            <p class="text-slate-500 text-xs leading-relaxed font-light">
+            <h3 class="font-semibold text-base text-white mb-2">Cerâmicas Ultrafinas</h3>
+            <p class="text-slate-400 text-xs leading-relaxed font-light">
               Porcelanas nobres importadas de alta resistência e translucidez idêntica ao esmalte dental natural. Sem aspecto artificial.
             </p>
           </div>
-          <span class="text-[11px] text-brand-600 font-medium mt-6 block">Estética imperceptível</span>
+          <span class="text-[11px] text-sky-400 font-medium mt-6 block">Estética imperceptível</span>
         </div>
 
         <!-- Card 4 -->
-        <div class="bg-white p-7 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-300 transition-all duration-300 flex flex-col justify-between">
+        <div class="bg-slate-900/40 backdrop-blur-md p-7 rounded-2xl border border-slate-800/80 shadow-sm hover:border-sky-500/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
           <div>
-            <div class="w-12 h-12 rounded-xl bg-sky-50 text-brand-600 flex items-center justify-center text-xl mb-5">
+            <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center text-xl mb-5 border border-sky-500/20">
               <i class="fa-solid fa-spa"></i>
             </div>
-            <h3 class="font-semibold text-base text-slate-900 mb-2">Espaço Acolhedor SPA</h3>
-            <p class="text-slate-500 text-xs leading-relaxed font-light">
+            <h3 class="font-semibold text-base text-white mb-2">Espaço Acolhedor SPA</h3>
+            <p class="text-slate-400 text-xs leading-relaxed font-light">
               Ambiente planejado com marcenaria acolhedora, aromaterapia e anestesia computadorizada sem dor.
             </p>
           </div>
-          <span class="text-[11px] text-brand-600 font-medium mt-6 block">Zero clima de hospital</span>
+          <span class="text-[11px] text-sky-400 font-medium mt-6 block">Zero clima de hospital</span>
         </div>
 
       </div>
@@ -411,68 +414,68 @@
   <!-- ======================================================== -->
   <!-- 5. COMO FUNCIONA O TRATAMENTO (TIMELINE EM 3 PASSOS)      -->
   <!-- ======================================================== -->
-  <section id="como-funciona" class="py-24 px-6 md:px-12 bg-white border-b border-slate-200">
+  <section id="como-funciona" class="py-24 px-6 md:px-12 bg-deep-950 border-t border-slate-800/60">
     <div class="max-w-5xl mx-auto">
       
       <div class="text-center max-w-xl mx-auto mb-16">
-        <span class="text-xs uppercase font-semibold tracking-widest text-brand-600 block mb-2">
+        <span class="text-xs uppercase font-semibold tracking-widest text-sky-400 block mb-2">
           Jornada Transparente
         </span>
-        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900">
+        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-white">
           Como Funciona o Tratamento
         </h2>
-        <p class="text-slate-500 text-sm font-light mt-3 leading-relaxed">
+        <p class="text-slate-400 text-sm font-light mt-3 leading-relaxed">
           Do primeiro contato à lapidação final: 3 etapas claras e confortáveis.
         </p>
       </div>
 
-      <!-- Timeline Cards -->
+      <!-- Timeline Cards em Fundo Escuro -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
         
         <!-- Passo 1 -->
-        <div class="relative bg-slate-50 p-8 rounded-3xl border border-slate-200 flex flex-col justify-between">
+        <div class="relative bg-slate-900/40 backdrop-blur-md p-8 rounded-3xl border border-slate-800/80 flex flex-col justify-between">
           <div>
-            <span class="inline-block w-8 h-8 rounded-full bg-brand-600 text-white font-bold text-xs flex items-center justify-center mb-6 shadow-sm">
+            <span class="inline-block w-8 h-8 rounded-full bg-brand-600 text-white font-bold text-xs flex items-center justify-center mb-6 shadow-sm shadow-brand-500/20">
               01
             </span>
-            <h3 class="font-semibold text-lg text-slate-900 mb-3">Consulta & Escaneamento 3D</h3>
-            <p class="text-slate-500 text-xs font-light leading-relaxed">
+            <h3 class="font-semibold text-lg text-white mb-3">Consulta & Escaneamento 3D</h3>
+            <p class="text-slate-400 text-xs font-light leading-relaxed">
               Mapeamento digital da mordida e análise estética facial com escâner de alta resolução. Avaliamos a saúde da gengiva e traçamos o plano sob medida.
             </p>
           </div>
-          <div class="mt-6 pt-4 border-t border-slate-200/80 text-[11px] text-slate-400">
+          <div class="mt-6 pt-4 border-t border-slate-800 text-[11px] text-slate-400">
             Duração média: 45 min
           </div>
         </div>
 
         <!-- Passo 2 -->
-        <div class="relative bg-slate-50 p-8 rounded-3xl border border-slate-200 flex flex-col justify-between">
+        <div class="relative bg-slate-900/40 backdrop-blur-md p-8 rounded-3xl border border-slate-800/80 flex flex-col justify-between">
           <div>
-            <span class="inline-block w-8 h-8 rounded-full bg-brand-600 text-white font-bold text-xs flex items-center justify-center mb-6 shadow-sm">
+            <span class="inline-block w-8 h-8 rounded-full bg-brand-600 text-white font-bold text-xs flex items-center justify-center mb-6 shadow-sm shadow-brand-500/20">
               02
             </span>
-            <h3 class="font-semibold text-lg text-slate-900 mb-3">Mockup & Validação</h3>
-            <p class="text-slate-500 text-xs font-light leading-relaxed">
+            <h3 class="font-semibold text-lg text-white mb-3">Mockup & Validação</h3>
+            <p class="text-slate-400 text-xs font-light leading-relaxed">
               Você experimenta uma prévia física do novo sorriso no próprio consultório. Ajustamos proporções, harmonia e alinhamento com a sua total aprovação.
             </p>
           </div>
-          <div class="mt-6 pt-4 border-t border-slate-200/80 text-[11px] text-slate-400">
+          <div class="mt-6 pt-4 border-t border-slate-800 text-[11px] text-slate-400">
             Previsibilidade antes de colar
           </div>
         </div>
 
         <!-- Passo 3 -->
-        <div class="relative bg-slate-50 p-8 rounded-3xl border border-slate-200 flex flex-col justify-between">
+        <div class="relative bg-slate-900/40 backdrop-blur-md p-8 rounded-3xl border border-slate-800/80 flex flex-col justify-between">
           <div>
-            <span class="inline-block w-8 h-8 rounded-full bg-brand-600 text-white font-bold text-xs flex items-center justify-center mb-6 shadow-sm">
+            <span class="inline-block w-8 h-8 rounded-full bg-brand-600 text-white font-bold text-xs flex items-center justify-center mb-6 shadow-sm shadow-brand-500/20">
               03
             </span>
-            <h3 class="font-semibold text-lg text-slate-900 mb-3">Instalação & Lapidação</h3>
-            <p class="text-slate-500 text-xs font-light leading-relaxed">
+            <h3 class="font-semibold text-lg text-white mb-3">Instalação & Lapidação</h3>
+            <p class="text-slate-400 text-xs font-light leading-relaxed">
               Cimentação definitiva das cerâmicas com precisão microscópica. Polimento bioestético e entrega do novo sorriso pronto para sorrir e mastigar com segurança.
             </p>
           </div>
-          <div class="mt-6 pt-4 border-t border-slate-200/80 text-[11px] text-slate-400">
+          <div class="mt-6 pt-4 border-t border-slate-800 text-[11px] text-slate-400">
             Garantia de durabilidade
           </div>
         </div>
@@ -486,25 +489,25 @@
   <!-- ======================================================== -->
   <!-- 6. ANTES & DEPOIS (SLIDER DE PRECISÃO MACRO)             -->
   <!-- ======================================================== -->
-  <section id="resultados" class="py-24 px-6 md:px-12 bg-slate-50 border-b border-slate-200">
+  <section id="resultados" class="py-24 px-6 md:px-12 bg-deep-950 border-t border-slate-800/60">
     <div class="max-w-4xl mx-auto">
       
       <div class="text-center max-w-xl mx-auto mb-14">
-        <span class="text-xs uppercase font-semibold tracking-widest text-brand-600 block mb-2">
+        <span class="text-xs uppercase font-semibold tracking-widest text-sky-400 block mb-2">
           Transformação Real
         </span>
-        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900">
+        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-white">
           Resultados Reais
         </h2>
-        <p class="text-slate-500 text-sm font-light mt-3 leading-relaxed">
+        <p class="text-slate-400 text-sm font-light mt-3 leading-relaxed">
           A sutileza dos detalhes: alinhamento milimétrico, textura natural e translucidez cerâmica sem artificialismo.
         </p>
       </div>
 
-      <!-- Container do Comparador Macro -->
+      <!-- Container do Comparador Macro no Tema Escuro -->
       <div class="relative">
         <div id="image-compare-box" 
-             class="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-3xl overflow-hidden select-none cursor-ew-resize bg-slate-900 border border-slate-200 shadow-md"
+             class="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-3xl overflow-hidden select-none cursor-ew-resize bg-slate-900 border border-slate-700/60 shadow-[0_20px_50px_rgba(0,0,0,0.6)]"
              style="--slider-pos: 50%;">
           
           <!-- Imagem DEPOIS (Base) -->
@@ -514,7 +517,7 @@
 
           <!-- Label DEPOIS -->
           <div class="absolute top-4 right-4 z-20 pointer-events-none">
-            <span class="px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-slate-900 text-[11px] font-bold border border-slate-200 shadow-sm uppercase tracking-wider">
+            <span class="px-3 py-1 rounded-full bg-slate-950/85 backdrop-blur-md text-sky-300 text-[11px] font-bold border border-sky-400/30 shadow-sm uppercase tracking-wider">
               Depois
             </span>
           </div>
@@ -528,7 +531,7 @@
 
           <!-- Label ANTES -->
           <div class="absolute top-4 left-4 z-20 pointer-events-none">
-            <span class="px-3 py-1 rounded-full bg-slate-900/90 backdrop-blur-md text-white text-[11px] font-bold border border-white/20 shadow-sm uppercase tracking-wider">
+            <span class="px-3 py-1 rounded-full bg-slate-950/85 backdrop-blur-md text-slate-300 text-[11px] font-bold border border-white/20 shadow-sm uppercase tracking-wider">
               Antes
             </span>
           </div>
@@ -538,10 +541,10 @@
                class="absolute top-0 bottom-0 z-30 pointer-events-none -ml-[1px] flex items-center justify-center"
                style="left: var(--slider-pos, 50%);">
             
-            <div class="w-[2px] h-full bg-white shadow-[0_0_8px_rgba(2,132,199,0.5)]"></div>
+            <div class="w-[2px] h-full bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.7)]"></div>
             
-            <div class="absolute w-9 h-9 rounded-full bg-white text-slate-900 shadow-lg border border-slate-200 flex items-center justify-center text-[10px] font-bold">
-              <span class="text-brand-600">◀ ▶</span>
+            <div class="absolute w-9 h-9 rounded-full bg-deep-950 text-white shadow-lg border border-cyan-400/60 flex items-center justify-center text-[10px] font-bold">
+              <span class="text-cyan-400">◀ ▶</span>
             </div>
           </div>
 
@@ -549,9 +552,9 @@
 
         </div>
 
-        <div class="flex items-center justify-between text-xs text-slate-500 mt-4 px-2 font-light">
+        <div class="flex items-center justify-between text-xs text-slate-400 mt-4 px-2 font-light">
           <div class="flex items-center gap-1.5">
-            <i class="fa-solid fa-arrows-left-right text-brand-600 text-[11px]"></i>
+            <i class="fa-solid fa-arrows-left-right text-sky-400 text-[11px]"></i>
             <span>Arraste lateralmente para inspecionar</span>
           </div>
           <span>Fechamento de diastema & cerâmicas translúcidas</span>
@@ -564,52 +567,52 @@
 
 
   <!-- ======================================================== -->
-  <!-- 7. PERGUNTAS FREQUENTES (FAQ ACORDEÃO)                   -->
+  <!-- 7. PERGUNTAS FREQUENTES (FAQ ACORDEÃO NO TEMA DARK)      -->
   <!-- ======================================================== -->
-  <section id="faq" class="py-24 px-6 md:px-12 bg-white border-b border-slate-200">
+  <section id="faq" class="py-24 px-6 md:px-12 bg-deep-950 border-t border-slate-800/60">
     <div class="max-w-3xl mx-auto">
       
       <div class="text-center mb-14">
-        <span class="text-xs uppercase font-semibold tracking-widest text-brand-600 block mb-2">
+        <span class="text-xs uppercase font-semibold tracking-widest text-sky-400 block mb-2">
           Tire Suas Dúvidas
         </span>
-        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900">
+        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-white">
           Perguntas Frequentes
         </h2>
       </div>
 
-      <!-- Acordeão Minimalista -->
+      <!-- Acordeão Minimalista Escuro -->
       <div class="space-y-4">
         
         <!-- Pergunta 1 -->
-        <div class="faq-item border border-slate-200 rounded-2xl p-5 hover:border-slate-300 transition-colors">
-          <button class="faq-toggle w-full flex items-center justify-between text-left font-semibold text-slate-900 text-sm sm:text-base focus:outline-none">
+        <div class="faq-item border border-slate-800/80 bg-slate-900/40 backdrop-blur-md rounded-2xl p-5 hover:border-slate-700 transition-colors">
+          <button class="faq-toggle w-full flex items-center justify-between text-left font-semibold text-white text-sm sm:text-base focus:outline-none">
             <span>As lentes de contato desgastam muito o dente natural?</span>
-            <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-300"></i>
+            <i class="fa-solid fa-chevron-down text-xs text-sky-400 transition-transform duration-300"></i>
           </button>
-          <div class="faq-content hidden pt-3 text-xs sm:text-sm text-slate-500 font-light leading-relaxed border-t border-slate-100 mt-3">
+          <div class="faq-content hidden pt-3 text-xs sm:text-sm text-slate-300 font-light leading-relaxed border-t border-slate-800 mt-3">
             Não. Na Marinho Dentistas seguimos a filosofia minimamente invasiva. As lentes cerâmicas ultrafinas (de 0.2mm a 0.4mm) exigem apenas uma preparação microscópica para assentamento ou, em diversos casos de fechamento de diastema e reanatomização, nenhum desgaste da estrutura sadia.
           </div>
         </div>
 
         <!-- Pergunta 2 -->
-        <div class="faq-item border border-slate-200 rounded-2xl p-5 hover:border-slate-300 transition-colors">
-          <button class="faq-toggle w-full flex items-center justify-between text-left font-semibold text-slate-900 text-sm sm:text-base focus:outline-none">
+        <div class="faq-item border border-slate-800/80 bg-slate-900/40 backdrop-blur-md rounded-2xl p-5 hover:border-slate-700 transition-colors">
+          <button class="faq-toggle w-full flex items-center justify-between text-left font-semibold text-white text-sm sm:text-base focus:outline-none">
             <span>Quanto tempo dura o tratamento de lentes de contato dentais?</span>
-            <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-300"></i>
+            <i class="fa-solid fa-chevron-down text-xs text-sky-400 transition-transform duration-300"></i>
           </button>
-          <div class="faq-content hidden pt-3 text-xs sm:text-sm text-slate-500 font-light leading-relaxed border-t border-slate-100 mt-3">
+          <div class="faq-content hidden pt-3 text-xs sm:text-sm text-slate-300 font-light leading-relaxed border-t border-slate-800 mt-3">
             As cerâmicas odontológicas possuem estabilidade de cor permanente (não mancham com café, vinho ou cigarro) e altíssima resistência mecânica. Com higienização adequada e visitas semestrais de rotina, as lentes duram de 10 a mais de 15 anos preservando o brilho inicial.
           </div>
         </div>
 
         <!-- Pergunta 3 -->
-        <div class="faq-item border border-slate-200 rounded-2xl p-5 hover:border-slate-300 transition-colors">
-          <button class="faq-toggle w-full flex items-center justify-between text-left font-semibold text-slate-900 text-sm sm:text-base focus:outline-none">
+        <div class="faq-item border border-slate-800/80 bg-slate-900/40 backdrop-blur-md rounded-2xl p-5 hover:border-slate-700 transition-colors">
+          <button class="faq-toggle w-full flex items-center justify-between text-left font-semibold text-white text-sm sm:text-base focus:outline-none">
             <span>O procedimento causa dor ou sensibilidade?</span>
-            <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-300"></i>
+            <i class="fa-solid fa-chevron-down text-xs text-sky-400 transition-transform duration-300"></i>
           </button>
-          <div class="faq-content hidden pt-3 text-xs sm:text-sm text-slate-500 font-light leading-relaxed border-t border-slate-100 mt-3">
+          <div class="faq-content hidden pt-3 text-xs sm:text-sm text-slate-300 font-light leading-relaxed border-t border-slate-800 mt-3">
             O tratamento é 100% indolor. Utilizamos anestesia computadorizada de fluxo controlado que evita qualquer desconforto da agulha tradicional, além de pomadas tópicas prévias. O paciente permanece tranquilo durante todo o procedimento com fones e áudio relaxante.
           </div>
         </div>
@@ -623,17 +626,17 @@
   <!-- ======================================================== -->
   <!-- 8. LOCALIZAÇÃO & UNIDADES (EXTREMA & TOLEDO)             -->
   <!-- ======================================================== -->
-  <section id="unidades" class="py-24 px-6 md:px-12 bg-slate-50 border-b border-slate-200">
+  <section id="unidades" class="py-24 px-6 md:px-12 bg-deep-950 border-t border-slate-800/60">
     <div class="max-w-6xl mx-auto">
       
       <div class="text-center max-w-xl mx-auto mb-16">
-        <span class="text-xs uppercase font-semibold tracking-widest text-brand-600 block mb-2">
+        <span class="text-xs uppercase font-semibold tracking-widest text-sky-400 block mb-2">
           Duas Unidades para Você
         </span>
-        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900">
+        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-white">
           Nossas Unidades
         </h2>
-        <p class="text-slate-500 text-sm font-light mt-3 leading-relaxed">
+        <p class="text-slate-400 text-sm font-light mt-3 leading-relaxed">
           Estrutura completa com estacionamento próximo e fácil acesso nas cidades de Extrema e Toledo.
         </p>
       </div>
@@ -641,35 +644,35 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         
         <!-- Unidade Extrema -->
-        <div class="bg-white rounded-3xl p-8 border border-slate-200/80 shadow-sm flex flex-col justify-between">
+        <div class="bg-slate-900/50 backdrop-blur-md rounded-3xl p-8 border border-slate-800/80 shadow-sm flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-4">
-              <span class="px-3 py-1 rounded-full bg-sky-50 text-brand-700 text-xs font-semibold uppercase tracking-wider">
+              <span class="px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-300 text-xs font-semibold uppercase tracking-wider">
                 Unidade Extrema • Matriz
               </span>
               <span class="text-xs text-slate-400">CRO-MG: 29.408</span>
             </div>
 
-            <h3 class="text-xl font-bold text-slate-900 mb-2">Clínica Extrema</h3>
-            <p class="text-slate-600 text-sm leading-relaxed font-light mb-4">
+            <h3 class="text-xl font-bold text-white mb-2">Clínica Extrema</h3>
+            <p class="text-slate-300 text-sm leading-relaxed font-light mb-4">
               Rua João Mendes, 103 - Centro<br>
               Extrema - MG • CEP: 37640-000
             </p>
 
-            <div class="space-y-1.5 text-xs text-slate-500 font-light mb-6">
-              <p><strong class="text-slate-700 font-medium">Horários:</strong> Seg a Sex das 08h às 19h | Sáb das 08h às 13h</p>
-              <p><strong class="text-slate-700 font-medium">Telefone:</strong> (35) 3435-1690</p>
+            <div class="space-y-1.5 text-xs text-slate-400 font-light mb-6">
+              <p><strong class="text-slate-200 font-medium">Horários:</strong> Seg a Sex das 08h às 19h | Sáb das 08h às 13h</p>
+              <p><strong class="text-slate-200 font-medium">Telefone:</strong> (35) 3435-1690</p>
             </div>
           </div>
 
-          <div class="flex flex-col sm:flex-row items-center gap-3 pt-4 border-t border-slate-100">
+          <div class="flex flex-col sm:flex-row items-center gap-3 pt-4 border-t border-slate-800">
             <a href="https://maps.google.com/?q=Rua+João+Mendes,+103,+Extrema+-+MG" target="_blank" rel="noopener noreferrer"
-               class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-medium transition-colors">
-              <i class="fa-solid fa-location-arrow text-brand-600"></i>
+               class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 text-xs font-medium transition-colors border border-slate-700/60">
+              <i class="fa-solid fa-location-arrow text-sky-400"></i>
               <span>Como Chegar no Maps</span>
             </a>
             <a href="https://wa.me/553534351690?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20na%20Unidade%20Extrema" target="_blank" rel="noopener noreferrer"
-               class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-xs font-semibold uppercase tracking-wider transition-colors shadow-sm">
+               class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 text-xs font-semibold uppercase tracking-wider transition-colors shadow-sm">
               <i class="fa-brands fa-whatsapp text-sm"></i>
               <span>Agendar em Extrema</span>
             </a>
@@ -677,29 +680,29 @@
         </div>
 
         <!-- Unidade Toledo -->
-        <div class="bg-white rounded-3xl p-8 border border-slate-200/80 shadow-sm flex flex-col justify-between">
+        <div class="bg-slate-900/50 backdrop-blur-md rounded-3xl p-8 border border-slate-800/80 shadow-sm flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-4">
-              <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-semibold uppercase tracking-wider">
+              <span class="px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-slate-300 text-xs font-semibold uppercase tracking-wider">
                 Unidade Toledo
               </span>
               <span class="text-xs text-slate-400">Atendimento Integrado</span>
             </div>
 
-            <h3 class="text-xl font-bold text-slate-900 mb-2">Clínica Toledo</h3>
-            <p class="text-slate-600 text-sm leading-relaxed font-light mb-4">
+            <h3 class="text-xl font-bold text-white mb-2">Clínica Toledo</h3>
+            <p class="text-slate-300 text-sm leading-relaxed font-light mb-4">
               Atendimento com hora marcada com a mesma tecnologia, conforto e acolhimento da matriz.
             </p>
 
-            <div class="space-y-1.5 text-xs text-slate-500 font-light mb-6">
-              <p><strong class="text-slate-700 font-medium">Horários:</strong> Dias e horários agendados previamente</p>
-              <p><strong class="text-slate-700 font-medium">Atendimento:</strong> Central unificada via WhatsApp</p>
+            <div class="space-y-1.5 text-xs text-slate-400 font-light mb-6">
+              <p><strong class="text-slate-200 font-medium">Horários:</strong> Dias e horários agendados previamente</p>
+              <p><strong class="text-slate-200 font-medium">Atendimento:</strong> Central unificada via WhatsApp</p>
             </div>
           </div>
 
-          <div class="pt-4 border-t border-slate-100">
+          <div class="pt-4 border-t border-slate-800">
             <a href="https://wa.me/553534351690?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20na%20Unidade%20Toledo" target="_blank" rel="noopener noreferrer"
-               class="w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-brand-600 text-white text-xs font-semibold uppercase tracking-wider transition-colors shadow-sm">
+               class="w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 text-xs font-semibold uppercase tracking-wider transition-colors shadow-sm">
               <i class="fa-brands fa-whatsapp text-sm"></i>
               <span>Agendar em Toledo</span>
             </a>
@@ -715,19 +718,23 @@
   <!-- ======================================================== -->
   <!-- 9. CONTATO & AGENDAMENTO DIRETO                          -->
   <!-- ======================================================== -->
-  <section id="contato" class="py-28 px-6 md:px-12 bg-gradient-to-b from-white via-sky-50/40 to-slate-100">
-    <div class="max-w-3xl mx-auto text-center">
+  <section id="contato" class="py-28 px-6 md:px-12 bg-deep-950 border-t border-slate-800/60 relative overflow-hidden">
+    
+    <!-- Brilho radial de fundo -->
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-sky-500/10 via-transparent to-transparent pointer-events-none"></div>
+
+    <div class="max-w-3xl mx-auto text-center relative z-10">
       
-      <span class="text-xs uppercase font-semibold tracking-widest text-brand-600 block mb-3">
+      <span class="text-xs uppercase font-semibold tracking-widest text-sky-400 block mb-3">
         Atendimento Personalizado
       </span>
 
-      <h2 class="text-3xl sm:text-5xl font-light tracking-tight text-slate-900 mb-4 leading-tight">
+      <h2 class="text-3xl sm:text-5xl font-light tracking-tight text-white mb-4 leading-tight">
         Pronto para transformar <br>
-        <span class="font-semibold text-slate-900">o seu sorriso?</span>
+        <span class="font-semibold text-white">o seu sorriso?</span>
       </h2>
 
-      <p class="text-slate-500 text-sm sm:text-base font-light max-w-lg mx-auto mb-10 leading-relaxed">
+      <p class="text-slate-400 text-sm sm:text-base font-light max-w-lg mx-auto mb-10 leading-relaxed">
         Agende sua consulta de avaliação com hora marcada em Extrema ou Toledo. Nossa equipe analisará seu caso com escaneamento digital 3D e acolhimento total.
       </p>
 
@@ -735,7 +742,7 @@
         <a href="https://wa.me/553534351690?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Marinho%20Dentistas" 
            target="_blank" 
            rel="noopener noreferrer"
-           class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-brand-600 hover:bg-brand-500 text-white font-semibold text-sm transition-all duration-200 shadow-md hover:shadow-lg hover:scale-105">
+           class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-sm uppercase tracking-wider transition-all duration-200 shadow-lg shadow-sky-500/25 hover:scale-105">
           <i class="fa-brands fa-whatsapp text-lg"></i>
           <span>Falar no WhatsApp</span>
         </a>
@@ -743,23 +750,23 @@
         <a href="https://www.instagram.com/marinho.dentista?vrfl=ZWV6bHVrbWFveXhy" 
            target="_blank" 
            rel="noopener noreferrer"
-           class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-white hover:bg-slate-50 text-slate-700 font-medium text-sm border border-slate-200 transition-colors shadow-sm">
-          <i class="fa-brands fa-instagram text-slate-500"></i>
+           class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-slate-900/80 hover:bg-slate-800 text-slate-300 font-medium text-sm border border-slate-700/60 transition-colors shadow-sm">
+          <i class="fa-brands fa-instagram text-sky-400"></i>
           <span>@marinho.dentista</span>
         </a>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-10 border-t border-slate-200 text-left sm:text-center text-xs text-slate-500 font-light">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-10 border-t border-slate-800 text-left sm:text-center text-xs text-slate-400 font-light">
         <div>
-          <span class="block font-medium text-slate-900 mb-1">Unidade Extrema</span>
+          <span class="block font-medium text-white mb-1">Unidade Extrema</span>
           <span>Rua João Mendes, 103 - Centro<br>Extrema, MG</span>
         </div>
         <div>
-          <span class="block font-medium text-slate-900 mb-1">Unidade Toledo</span>
+          <span class="block font-medium text-white mb-1">Unidade Toledo</span>
           <span>Atendimento integrado<br>com hora marcada</span>
         </div>
         <div>
-          <span class="block font-medium text-slate-900 mb-1">Contato & Registro</span>
+          <span class="block font-medium text-white mb-1">Contato & Registro</span>
           <span>(35) 3435-1690<br>CRO-MG: 29.408</span>
         </div>
       </div>
@@ -769,14 +776,14 @@
 
 
   <!-- ======================================================== -->
-  <!-- 10. RODAPÉ MINIMALISTA                                   -->
+  <!-- 10. RODAPÉ MINIMALISTA NO TEMA UNIFICADO                 -->
   <!-- ======================================================== -->
-  <footer class="py-8 px-6 md:px-12 bg-white border-t border-slate-200 text-slate-400 text-[11px] font-light">
+  <footer class="py-8 px-6 md:px-12 bg-deep-990 border-t border-slate-800/80 text-slate-500 text-[11px] font-light">
     <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
       <p>© 2026 Marinho Dentistas. Todos os direitos reservados. CRO-MG: 29.408</p>
       <div class="flex items-center gap-6">
         <span>Odontologia Estética & Reabilitação Digital</span>
-        <a href="#hero-scroll" class="text-slate-600 hover:text-brand-600 transition-colors">Voltar ao topo ↑</a>
+        <a href="#hero-scroll" class="text-slate-400 hover:text-sky-400 transition-colors">Voltar ao topo ↑</a>
       </div>
     </div>
   </footer>
@@ -789,19 +796,17 @@
     document.addEventListener("DOMContentLoaded", () => {
       
       // ========================================================
-      // 1. NAVBAR DINÂMICA: TOTALMENTE TRANSPARENTE NO VÍDEO
+      // 1. NAVBAR DINÂMICA: TOTALMENTE INTEGRADA NO SCROLL
       // ========================================================
       const header = document.getElementById("main-header");
       const heroSection = document.getElementById("hero-scroll");
 
       window.addEventListener("scroll", () => {
         const heroBottom = heroSection.getBoundingClientRect().bottom;
-        // Quando ainda estiver na área do vídeo hero
         if (heroBottom > 120) {
           header.className = "fixed top-0 left-0 w-full z-50 transition-all duration-500 py-6 px-6 md:px-12 bg-transparent text-white";
         } else {
-          // Quando passar para as seções claras
-          header.className = "fixed top-0 left-0 w-full z-50 transition-all duration-500 py-3.5 px-6 md:px-12 bg-slate-950/85 backdrop-blur-md border-b border-white/10 text-white shadow-lg";
+          header.className = "fixed top-0 left-0 w-full z-50 transition-all duration-500 py-3.5 px-6 md:px-12 bg-deep-950/90 backdrop-blur-md border-b border-white/10 text-white shadow-lg";
         }
       });
 
@@ -1116,12 +1121,10 @@
           archGroup.rotation.y += (targetRotY - archGroup.rotation.y) * 0.08;
           archGroup.rotation.x += (targetRotX - archGroup.rotation.x) * 0.08;
 
-          // Movimento suave das partículas
           particles.rotation.y += 0.0008;
 
-          // Laser sweep vertical
           if (laser && laserActive) {
-            const pos = (Math.sin(clock * 1.5) + 1) / 2; // 0 to 1
+            const pos = (Math.sin(clock * 1.5) + 1) / 2;
             laser.style.top = `${20 + pos * 60}%`;
           }
 
@@ -1196,7 +1199,7 @@
 
 
       // ========================================================
-      // 5. ACORDEÃO FAQ SUAVE
+      // 5. ACORDEÃO FAQ SUAVE NO TEMA DARK
       // ========================================================
       const faqItems = document.querySelectorAll(".faq-item");
       faqItems.forEach(item => {
