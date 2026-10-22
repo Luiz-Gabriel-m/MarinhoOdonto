@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marinho Dentistas | Estética Dental & Tecnologia 3D</title>
-  <meta name="description" content="Odontologia estética de alto padrão. Lentes de contato dental, escaneamento digital 3D e reabilitação oral com precisão milimétrica em Extrema e Toledo.">
+  <title>Marinho Dentistas | Odontologia Estética de Alta Performance & Tecnologia 3D</title>
+  <meta name="description" content="Odontologia estética de alto padrão em Extrema e Toledo. Lentes de contato dental, escaneamento digital 3D e reabilitação oral com precisão milimétrica.">
   <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
 
   <!-- Open Graph -->
@@ -12,12 +12,12 @@
   <meta property="og:description" content="Transformamos vidas através do sorriso. Tecnologia digital, lentes cerâmicas e arquitetura acolhedora em Extrema e Toledo.">
   <meta property="og:image" content="assets/images/clinic-facade-night.jpg">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#FFFFFF">
+  <meta name="theme-color" content="#020617">
 
   <!-- Google Fonts: Plus Jakarta Sans & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -39,10 +39,10 @@
               600: '#0284C7',
               700: '#0369A1'
             },
-            petroleum: {
-              800: '#1E293B',
-              900: '#0F172A',
-              950: '#020617'
+            space: {
+              900: '#0A1128',
+              950: '#060B18',
+              990: '#03060E'
             }
           },
           fontFamily: {
@@ -59,25 +59,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
   <style>
-    /* Estilo Ultra Clean & Tipografia Fluida */
+    /* Estilos Gerais e Ajustes Finos */
     ::selection {
-      background-color: #BAE6FD;
-      color: #0F172A;
-    }
-
-    .glass-nav {
-      background: rgba(255, 255, 255, 0.75);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(226, 232, 240, 0.6);
-    }
-
-    .glass-card-clean {
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(226, 232, 240, 0.9);
-      box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.05);
+      background-color: #38BDF8;
+      color: #060B18;
     }
 
     /* Slider de Comparação Antes/Depois */
@@ -86,48 +71,68 @@
     }
 
     /* Canvas 3D sem outline */
-    #dental-canvas-container canvas {
+    #three-viewport canvas {
       outline: none;
-      border-radius: 1.5rem;
+      display: block;
+      width: 100% !important;
+      height: 100% !important;
+    }
+
+    /* Scrollbar sutil */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #060B18;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1E293B;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #0284C7;
     }
   </style>
 </head>
 
-<body class="bg-white text-slate-800 font-sans antialiased selection:bg-brand-200 selection:text-petroleum-900 overflow-x-hidden">
+<body class="bg-white text-slate-800 font-sans antialiased overflow-x-hidden">
 
   <!-- ======================================================== -->
-  <!-- NAVEGAÇÃO TRANSLÚCIDA & MINIMALISTA                      -->
+  <!-- 1. NAVBAR TRANSPARENTE E SEM CORTES SECOS                -->
   <!-- ======================================================== -->
-  <header id="main-header" class="fixed top-0 left-0 w-full z-50 glass-nav transition-all duration-300 py-4 px-6 md:px-12">
+  <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 py-6 px-6 md:px-12 bg-transparent text-white">
     <div class="max-w-6xl mx-auto flex items-center justify-between">
       
       <!-- Logo Minimalista -->
-      <a href="#" class="flex items-center gap-2.5 group">
-        <div class="w-8 h-8 rounded-lg bg-brand-50 border border-brand-200 flex items-center justify-center text-brand-600 transition-colors group-hover:bg-brand-600 group-hover:text-white">
+      <a href="#" class="flex items-center gap-2.5 group drop-shadow-sm">
+        <div class="w-8 h-8 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-sky-300 transition-all group-hover:scale-105 group-hover:bg-brand-500 group-hover:text-white">
           <i class="fa-solid fa-tooth text-sm"></i>
         </div>
         <div class="flex flex-col">
-          <span class="font-bold text-base tracking-tight text-petroleum-900 leading-none">
-            MARINHO <span class="font-light text-brand-600">DENTISTAS</span>
+          <span class="font-bold text-base tracking-tight text-white leading-none">
+            MARINHO <span class="font-light text-sky-300">DENTISTAS</span>
           </span>
-          <span class="text-[9px] uppercase tracking-widest text-slate-400 mt-0.5">Extrema & Toledo</span>
+          <span class="text-[9px] uppercase tracking-widest text-white/70 mt-0.5">Extrema & Toledo</span>
         </div>
       </a>
 
-      <!-- Links de Seção -->
-      <nav class="hidden md:flex items-center gap-8 text-xs font-medium tracking-wide text-slate-600">
-        <a href="#hero-scroll" class="hover:text-brand-600 transition-colors">A Clínica</a>
-        <a href="#experiencia-3d" class="hover:text-brand-600 transition-colors">Tecnologia 3D</a>
-        <a href="#resultados" class="hover:text-brand-600 transition-colors">Resultados</a>
-        <a href="#contato" class="hover:text-brand-600 transition-colors">Contato</a>
+      <!-- Menu Desktop -->
+      <nav class="hidden md:flex items-center gap-8 text-xs font-medium tracking-wider uppercase text-white/80 drop-shadow-sm">
+        <a href="#hero-scroll" class="hover:text-sky-300 transition-colors">A Clínica</a>
+        <a href="#experiencia-3d" class="hover:text-sky-300 transition-colors">Tecnologia 3D</a>
+        <a href="#diferenciais" class="hover:text-sky-300 transition-colors">Diferenciais</a>
+        <a href="#como-funciona" class="hover:text-sky-300 transition-colors">Tratamento</a>
+        <a href="#resultados" class="hover:text-sky-300 transition-colors">Resultados</a>
+        <a href="#faq" class="hover:text-sky-300 transition-colors">Dúvidas</a>
+        <a href="#unidades" class="hover:text-sky-300 transition-colors">Unidades</a>
       </nav>
 
-      <!-- Botão CTA Discreto -->
+      <!-- Botão CTA Discreto no Header -->
       <div class="flex items-center gap-3">
         <a href="https://wa.me/553534351690?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Marinho%20Dentistas" target="_blank" rel="noopener noreferrer"
-           class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-petroleum-900 text-white text-xs font-medium hover:bg-brand-600 transition-all duration-200 shadow-sm">
+           class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/15 hover:bg-brand-500 backdrop-blur-md border border-white/20 text-white text-xs font-semibold uppercase tracking-wider transition-all duration-300 shadow-sm hover:scale-105">
           <span>Agendar</span>
-          <i class="fa-solid fa-arrow-right text-[10px] opacity-70"></i>
+          <i class="fa-solid fa-arrow-right text-[10px] text-sky-200"></i>
         </a>
       </div>
 
@@ -136,38 +141,38 @@
 
 
   <!-- ======================================================== -->
-  <!-- SEÇÃO 1: HERO / VÍDEO CONTROLADO POR SCROLL (SCROLL-BOUND) -->
+  <!-- 2. HERO SECTION COM VÍDEO CONTROLADO POR SCROLL          -->
   <!-- ======================================================== -->
   <section id="hero-scroll" class="relative w-full h-[320vh] bg-black">
     
     <!-- Janela de visualização fixa (Sticky 100vh) -->
     <div id="hero-sticky" class="sticky top-0 w-full h-screen overflow-hidden flex items-center justify-center">
       
-      <!-- Vídeo em tela limpa -->
-      <video id="hero-video" class="absolute inset-0 w-full h-full object-cover filter brightness-[0.88]" playsinline webkit-playsinline muted preload="auto">
+      <!-- Vídeo ocupando tela cheia limpa -->
+      <video id="hero-video" class="absolute inset-0 w-full h-full object-cover filter brightness-[0.85] contrast-[1.05]" playsinline webkit-playsinline muted preload="auto">
         <source src="assets/videos/hero-video.mp4" type="video/mp4">
       </video>
 
-      <!-- Camada de vinheta e contraste sutil -->
-      <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30 pointer-events-none"></div>
+      <!-- Gradiente cinematográfico suave para legibilidade sem cortar o topo -->
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/40 pointer-events-none"></div>
 
-      <!-- Indicador sutil de scroll no rodapé inicial -->
-      <div id="initial-scroll-hint" class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-white/70 text-xs font-light tracking-widest uppercase transition-opacity duration-500">
+      <!-- Indicador sutil de início de scroll -->
+      <div id="initial-scroll-hint" class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-white/70 text-xs font-light tracking-widest uppercase transition-opacity duration-500 pointer-events-none">
         <span>Role para conhecer</span>
         <div class="w-4 h-7 rounded-full border border-white/40 flex items-start justify-center p-1">
-          <div class="w-1 h-2 bg-white rounded-full animate-bounce"></div>
+          <div class="w-1 h-2 bg-sky-300 rounded-full animate-bounce"></div>
         </div>
       </div>
 
       <!-- ===================================================== -->
-      <!-- OVERLAYS TEXTUAIS PURISTAS (REVEAL GRADUAL VIA GSAP)   -->
+      <!-- OVERLAYS TEXTUAIS REVELADOS COM TRANSIÇÃO GSAP        -->
       <!-- ===================================================== -->
 
-      <!-- Texto 1: Frase Marcante -->
+      <!-- Texto 1: Frase Marcante da Clínica -->
       <div id="hero-text-1" class="absolute inset-0 flex items-center justify-center p-6 text-center z-20 pointer-events-none opacity-0 translate-y-8">
         <div class="max-w-3xl">
-          <span class="inline-block px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-sky-300 text-[11px] font-medium tracking-widest uppercase mb-4">
-            Propósito & Acolhimento
+          <span class="inline-block px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-sky-300 text-[11px] font-semibold tracking-widest uppercase mb-4">
+            Marinho Dentistas • Extrema & Toledo
           </span>
           <h1 class="text-3xl sm:text-5xl md:text-6xl font-light tracking-tight text-white leading-tight">
             “Transformamos vidas <br>
@@ -176,31 +181,31 @@
         </div>
       </div>
 
-      <!-- Texto 2: Arquitetura & Cuidado -->
+      <!-- Texto 2: Arquitetura Acolhedora -->
       <div id="hero-text-2" class="absolute inset-0 flex items-center justify-center p-6 text-center z-20 pointer-events-none opacity-0 translate-y-8">
         <div class="max-w-2xl">
-          <span class="inline-block px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-sky-300 text-[11px] font-medium tracking-widest uppercase mb-4">
-            Atmosfera Clínica
+          <span class="inline-block px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-sky-300 text-[11px] font-semibold tracking-widest uppercase mb-4">
+            Atmosfera Clínica Acolhedora
           </span>
           <p class="text-2xl sm:text-4xl font-light tracking-tight text-white leading-snug">
             Arquitetura concebida para acolher. <br>
             <span class="text-slate-300 text-lg sm:text-xl font-light mt-2 block">
-              Precisão planejada para transformar com calma e bem-estar.
+              Precisão clínica planejada para transformar com calma e bem-estar.
             </span>
           </p>
         </div>
       </div>
 
-      <!-- Texto 3: Tecnologia Digital -->
+      <!-- Texto 3: Tecnologia Digital 3D -->
       <div id="hero-text-3" class="absolute inset-0 flex items-center justify-center p-6 text-center z-20 pointer-events-none opacity-0 translate-y-8">
         <div class="max-w-2xl">
-          <span class="inline-block px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-sky-300 text-[11px] font-medium tracking-widest uppercase mb-4">
-            Diagnóstico Avançado
+          <span class="inline-block px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-sky-300 text-[11px] font-semibold tracking-widest uppercase mb-4">
+            Odontologia do Futuro
           </span>
           <p class="text-2xl sm:text-4xl font-light tracking-tight text-white leading-snug">
-            Tecnologia digital e cerâmicas nobres. <br>
+            Tecnologia 3D e cerâmicas nobres. <br>
             <span class="text-sky-200 text-lg sm:text-xl font-light mt-2 block">
-              O futuro da sua saúde e estética oral em Extrema & Toledo.
+              Diagnóstico computadorizado e lentes com precisão microscópica.
             </span>
           </p>
         </div>
@@ -211,87 +216,105 @@
 
 
   <!-- ======================================================== -->
-  <!-- SEÇÃO 2: EXPERIÊNCIA 3D INTERATIVA (THREE.JS)            -->
+  <!-- 3. SEÇÃO 3D INTERATIVA (FUNDO ESCURO & ALTO CONTRASTE)   -->
   <!-- ======================================================== -->
-  <section id="experiencia-3d" class="relative py-28 px-6 md:px-12 bg-slate-50/60 border-b border-slate-200/60 overflow-hidden">
+  <section id="experiencia-3d" class="relative py-28 px-6 md:px-12 bg-space-950 text-white overflow-hidden border-t border-b border-slate-800">
     
+    <!-- Elementos de iluminação ambiente do container -->
+    <div class="absolute -top-32 -left-32 w-96 h-96 bg-brand-600/15 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
     <div class="max-w-6xl mx-auto">
       
-      <!-- Cabeçalho Minimalista da Seção -->
+      <!-- Cabeçalho -->
       <div class="max-w-xl mb-12">
-        <span class="text-xs uppercase font-semibold tracking-widest text-brand-600 block mb-2">
+        <span class="text-xs uppercase font-semibold tracking-widest text-sky-400 block mb-2">
           Fluxo 100% Digital
         </span>
-        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-petroleum-900 leading-tight">
+        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-white leading-tight">
           Modelagem & Precisão 3D
         </h2>
-        <p class="text-slate-500 text-sm font-light mt-3 leading-relaxed">
-          Cada dente e anatomia do seu novo sorriso são planejados digitalmente antes de qualquer intervenção clínica.
+        <p class="text-slate-400 text-sm font-light mt-3 leading-relaxed">
+          Inspecione a arcada cerâmica em 360°. Cada ângulo, cúspide e linha gengival são calculados para um resultado bioestético perfeito.
         </p>
       </div>
 
-      <!-- Grade: Canvas 3D e Card Informativo Flutuante -->
+      <!-- Grade: Canvas 3D e Card Explicativo -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         
-        <!-- Canvas Interativo 3D com Three.js -->
+        <!-- Viewport 3D em Fundo Escuro Tecnológico -->
         <div class="lg:col-span-7 relative">
-          <div class="relative w-full aspect-[4/3] rounded-3xl bg-gradient-to-b from-white via-slate-50 to-sky-50/30 border border-slate-200/80 shadow-sm overflow-hidden" id="dental-canvas-container">
+          <div class="relative w-full aspect-[4/3] rounded-3xl bg-gradient-to-b from-space-900 to-space-990 border border-slate-800 shadow-[0_20px_50px_rgba(0,0,0,0.6)] overflow-hidden" id="dental-canvas-container">
             
-            <!-- Three.js Canvas montado via Script -->
+            <!-- Canvas Three.js -->
             <div id="three-viewport" class="w-full h-full cursor-grab active:cursor-grabbing"></div>
 
-            <!-- Badge Interativa Discreta -->
-            <div class="absolute bottom-4 left-4 z-10 flex items-center gap-2 bg-white/80 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-slate-200 text-[11px] text-slate-500 font-medium pointer-events-none">
-              <i class="fa-solid fa-arrows-rotate text-brand-500 text-xs animate-spin" style="animation-duration: 8s;"></i>
-              <span>Arraste para girar a arcada em 360°</span>
+            <!-- Scanner Beam Animado (Linha Laser Tecnológica) -->
+            <div id="scanner-laser" class="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-60 shadow-[0_0_12px_#22d3ee] pointer-events-none transition-all duration-700"></div>
+
+            <!-- Badge Interativa -->
+            <div class="absolute bottom-4 left-4 z-10 flex items-center gap-2 bg-space-950/80 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-slate-700 text-[11px] text-slate-300 font-medium pointer-events-none">
+              <i class="fa-solid fa-arrows-rotate text-cyan-400 text-xs animate-spin" style="animation-duration: 8s;"></i>
+              <span>Arraste com o mouse para girar 360°</span>
             </div>
 
-            <!-- Botão de Reset da Câmera -->
-            <button id="reset-3d-btn" class="absolute top-4 right-4 z-10 w-8 h-8 rounded-full bg-white/80 backdrop-blur-md border border-slate-200 text-slate-600 hover:text-brand-600 hover:bg-white flex items-center justify-center text-xs transition-colors shadow-sm" title="Centralizar visualização">
-              <i class="fa-solid fa-crosshairs"></i>
-            </button>
+            <!-- Botões de Ação do 3D -->
+            <div class="absolute top-4 right-4 z-10 flex items-center gap-2">
+              <button id="toggle-scan-btn" class="px-3 py-1 rounded-full bg-space-950/80 backdrop-blur-md border border-slate-700 text-slate-300 hover:text-cyan-300 hover:border-cyan-500/50 text-xs transition-colors flex items-center gap-1.5" title="Ativar laser de escaneamento">
+                <i class="fa-solid fa-laser text-[10px] text-cyan-400"></i>
+                <span class="text-[11px]">Scan</span>
+              </button>
+              <button id="reset-3d-btn" class="w-7 h-7 rounded-full bg-space-950/80 backdrop-blur-md border border-slate-700 text-slate-300 hover:text-cyan-300 hover:border-cyan-500/50 flex items-center justify-center text-xs transition-colors" title="Centralizar visualização">
+                <i class="fa-solid fa-crosshairs"></i>
+              </button>
+            </div>
 
           </div>
         </div>
 
-        <!-- Card Flutuante Clean -->
+        <!-- Card Explicativo de Alto Padrão -->
         <div class="lg:col-span-5">
-          <div class="glass-card-clean p-8 sm:p-10 rounded-3xl space-y-6">
+          <div class="bg-space-900/90 backdrop-blur-xl p-8 sm:p-10 rounded-3xl border border-slate-800 space-y-6 shadow-xl">
             
-            <div class="w-10 h-10 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center text-base border border-brand-200/60">
+            <div class="w-10 h-10 rounded-xl bg-brand-500/10 border border-brand-500/30 text-sky-400 flex items-center justify-center text-base">
               <i class="fa-solid fa-cube"></i>
             </div>
 
             <div>
-              <h3 class="text-xl font-semibold text-petroleum-900 tracking-tight mb-2">
+              <span class="text-[10px] uppercase font-bold tracking-widest text-cyan-400 bg-cyan-950/60 px-2.5 py-1 rounded border border-cyan-800/40">
+                Padrão Bioestético
+              </span>
+              <h3 class="text-xl sm:text-2xl font-semibold text-white tracking-tight mt-3 mb-2">
                 Lentes de Contato & Reabilitação Digital
               </h3>
-              <p class="text-slate-600 text-sm font-light leading-relaxed">
+              <p class="text-slate-300 text-sm font-light leading-relaxed">
                 Precisão milimétrica planejada em 3D para um encaixe natural, preservando ao máximo a estrutura dental sadia e harmonizando com os traços do seu rosto.
               </p>
             </div>
 
-            <!-- Especificações Rápidas -->
-            <div class="pt-4 border-t border-slate-100 space-y-3 text-xs text-slate-600 font-light">
+            <!-- Métricas Técnicas -->
+            <div class="pt-4 border-t border-slate-800 space-y-3 text-xs text-slate-300 font-light">
               <div class="flex items-center justify-between">
                 <span class="text-slate-400">Espessura cerâmica</span>
-                <span class="font-medium text-petroleum-900">0.2mm a 0.4mm (Ultrafina)</span>
+                <span class="font-medium text-white">0.2mm a 0.4mm (Ultrafina)</span>
               </div>
               <div class="flex items-center justify-between">
                 <span class="text-slate-400">Método de captura</span>
-                <span class="font-medium text-petroleum-900">Escaneamento óptico intraoral</span>
+                <span class="font-medium text-white">Escaneamento óptico 3D</span>
               </div>
               <div class="flex items-center justify-between">
                 <span class="text-slate-400">Previsibilidade</span>
-                <span class="font-medium text-brand-600">Mockup visual em consultório</span>
+                <span class="font-medium text-sky-300">Mockup visual em consultório</span>
               </div>
             </div>
 
-            <a href="https://wa.me/553534351690?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20as%20lentes%20digitais%20na%20Marinho%20Dentistas" target="_blank" rel="noopener noreferrer"
-               class="inline-flex items-center gap-2 text-xs font-semibold text-brand-600 hover:text-brand-700 transition-colors pt-2">
-              <span>Saiba como é planejado o seu caso</span>
-              <i class="fa-solid fa-arrow-right text-[10px]"></i>
-            </a>
+            <div class="pt-2">
+              <a href="https://wa.me/553534351690?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20as%20lentes%20digitais%20na%20Marinho%20Dentistas" target="_blank" rel="noopener noreferrer"
+                 class="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-medium text-xs uppercase tracking-wider transition-all duration-200 shadow-lg shadow-brand-600/20">
+                <span>Simular Meu Sorriso no WhatsApp</span>
+                <i class="fa-brands fa-whatsapp text-sm"></i>
+              </a>
+            </div>
 
           </div>
         </div>
@@ -303,17 +326,174 @@
 
 
   <!-- ======================================================== -->
-  <!-- SEÇÃO 3: ANTES & DEPOIS (MACRO CLOSE-UP DO SORRISO)      -->
+  <!-- 4. TECNOLOGIA & EXPERIÊNCIA MARINHO (GRID DIFERENCIAIS)   -->
   <!-- ======================================================== -->
-  <section id="resultados" class="relative py-28 px-6 md:px-12 bg-white border-b border-slate-200/60">
+  <section id="diferenciais" class="py-24 px-6 md:px-12 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-6xl mx-auto">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs uppercase font-semibold tracking-widest text-brand-600 block mb-2">
+          Diferenciais Exclusivos
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900">
+          Tecnologia & Experiência Marinho
+        </h2>
+        <p class="text-slate-500 text-sm font-light mt-3 leading-relaxed">
+          Unimos protocolos clínicos internacionais a uma arquitetura humanizada para que seu tratamento seja previsível, rápido e acolhedor.
+        </p>
+      </div>
+
+      <!-- Grid com 4 Cards Modernos -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Card 1 -->
+        <div class="bg-white p-7 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-300 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-sky-50 text-brand-600 flex items-center justify-center text-xl mb-5">
+              <i class="fa-solid fa-camera-rotate"></i>
+            </div>
+            <h3 class="font-semibold text-base text-slate-900 mb-2">Scanner Intraoral 3D</h3>
+            <p class="text-slate-500 text-xs leading-relaxed font-light">
+              Elimina as moldagens com massa desconfortável. Captura digital rápida com precisão micrométrica da sua arcada.
+            </p>
+          </div>
+          <span class="text-[11px] text-brand-600 font-medium mt-6 block">Conforto absoluto</span>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white p-7 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-300 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-sky-50 text-brand-600 flex items-center justify-center text-xl mb-5">
+              <i class="fa-solid fa-laptop-medical"></i>
+            </div>
+            <h3 class="font-semibold text-base text-slate-900 mb-2">Planejamento Digital</h3>
+            <p class="text-slate-500 text-xs leading-relaxed font-light">
+              Simulação estética computadorizada. Você valida e aprova o desenho do seu novo sorriso antes de iniciar o procedimento.
+            </p>
+          </div>
+          <span class="text-[11px] text-brand-600 font-medium mt-6 block">Previsibilidade total</span>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white p-7 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-300 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-sky-50 text-brand-600 flex items-center justify-center text-xl mb-5">
+              <i class="fa-solid fa-gem"></i>
+            </div>
+            <h3 class="font-semibold text-base text-slate-900 mb-2">Cerâmicas Ultrafinas</h3>
+            <p class="text-slate-500 text-xs leading-relaxed font-light">
+              Porcelanas nobres importadas de alta resistência e translucidez idêntica ao esmalte dental natural. Sem aspecto artificial.
+            </p>
+          </div>
+          <span class="text-[11px] text-brand-600 font-medium mt-6 block">Estética imperceptível</span>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="bg-white p-7 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-300 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-sky-50 text-brand-600 flex items-center justify-center text-xl mb-5">
+              <i class="fa-solid fa-spa"></i>
+            </div>
+            <h3 class="font-semibold text-base text-slate-900 mb-2">Espaço Acolhedor SPA</h3>
+            <p class="text-slate-500 text-xs leading-relaxed font-light">
+              Ambiente planejado com marcenaria acolhedora, aromaterapia e anestesia computadorizada sem dor.
+            </p>
+          </div>
+          <span class="text-[11px] text-brand-600 font-medium mt-6 block">Zero clima de hospital</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ======================================================== -->
+  <!-- 5. COMO FUNCIONA O TRATAMENTO (TIMELINE EM 3 PASSOS)      -->
+  <!-- ======================================================== -->
+  <section id="como-funciona" class="py-24 px-6 md:px-12 bg-white border-b border-slate-200">
+    <div class="max-w-5xl mx-auto">
+      
+      <div class="text-center max-w-xl mx-auto mb-16">
+        <span class="text-xs uppercase font-semibold tracking-widest text-brand-600 block mb-2">
+          Jornada Transparente
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900">
+          Como Funciona o Tratamento
+        </h2>
+        <p class="text-slate-500 text-sm font-light mt-3 leading-relaxed">
+          Do primeiro contato à lapidação final: 3 etapas claras e confortáveis.
+        </p>
+      </div>
+
+      <!-- Timeline Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+        
+        <!-- Passo 1 -->
+        <div class="relative bg-slate-50 p-8 rounded-3xl border border-slate-200 flex flex-col justify-between">
+          <div>
+            <span class="inline-block w-8 h-8 rounded-full bg-brand-600 text-white font-bold text-xs flex items-center justify-center mb-6 shadow-sm">
+              01
+            </span>
+            <h3 class="font-semibold text-lg text-slate-900 mb-3">Consulta & Escaneamento 3D</h3>
+            <p class="text-slate-500 text-xs font-light leading-relaxed">
+              Mapeamento digital da mordida e análise estética facial com escâner de alta resolução. Avaliamos a saúde da gengiva e traçamos o plano sob medida.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-200/80 text-[11px] text-slate-400">
+            Duração média: 45 min
+          </div>
+        </div>
+
+        <!-- Passo 2 -->
+        <div class="relative bg-slate-50 p-8 rounded-3xl border border-slate-200 flex flex-col justify-between">
+          <div>
+            <span class="inline-block w-8 h-8 rounded-full bg-brand-600 text-white font-bold text-xs flex items-center justify-center mb-6 shadow-sm">
+              02
+            </span>
+            <h3 class="font-semibold text-lg text-slate-900 mb-3">Mockup & Validação</h3>
+            <p class="text-slate-500 text-xs font-light leading-relaxed">
+              Você experimenta uma prévia física do novo sorriso no próprio consultório. Ajustamos proporções, harmonia e alinhamento com a sua total aprovação.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-200/80 text-[11px] text-slate-400">
+            Previsibilidade antes de colar
+          </div>
+        </div>
+
+        <!-- Passo 3 -->
+        <div class="relative bg-slate-50 p-8 rounded-3xl border border-slate-200 flex flex-col justify-between">
+          <div>
+            <span class="inline-block w-8 h-8 rounded-full bg-brand-600 text-white font-bold text-xs flex items-center justify-center mb-6 shadow-sm">
+              03
+            </span>
+            <h3 class="font-semibold text-lg text-slate-900 mb-3">Instalação & Lapidação</h3>
+            <p class="text-slate-500 text-xs font-light leading-relaxed">
+              Cimentação definitiva das cerâmicas com precisão microscópica. Polimento bioestético e entrega do novo sorriso pronto para sorrir e mastigar com segurança.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-200/80 text-[11px] text-slate-400">
+            Garantia de durabilidade
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ======================================================== -->
+  <!-- 6. ANTES & DEPOIS (SLIDER DE PRECISÃO MACRO)             -->
+  <!-- ======================================================== -->
+  <section id="resultados" class="py-24 px-6 md:px-12 bg-slate-50 border-b border-slate-200">
     <div class="max-w-4xl mx-auto">
       
-      <!-- Cabeçalho Minimalista -->
       <div class="text-center max-w-xl mx-auto mb-14">
         <span class="text-xs uppercase font-semibold tracking-widest text-brand-600 block mb-2">
           Transformação Real
         </span>
-        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-petroleum-900">
+        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900">
           Resultados Reais
         </h2>
         <p class="text-slate-500 text-sm font-light mt-3 leading-relaxed">
@@ -324,7 +504,7 @@
       <!-- Container do Comparador Macro -->
       <div class="relative">
         <div id="image-compare-box" 
-             class="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-3xl overflow-hidden select-none cursor-ew-resize bg-slate-100 border border-slate-200/80 shadow-sm"
+             class="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-3xl overflow-hidden select-none cursor-ew-resize bg-slate-900 border border-slate-200 shadow-md"
              style="--slider-pos: 50%;">
           
           <!-- Imagem DEPOIS (Base) -->
@@ -334,7 +514,7 @@
 
           <!-- Label DEPOIS -->
           <div class="absolute top-4 right-4 z-20 pointer-events-none">
-            <span class="px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-petroleum-900 text-[11px] font-medium border border-slate-200/80 shadow-sm">
+            <span class="px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-slate-900 text-[11px] font-bold border border-slate-200 shadow-sm uppercase tracking-wider">
               Depois
             </span>
           </div>
@@ -348,7 +528,7 @@
 
           <!-- Label ANTES -->
           <div class="absolute top-4 left-4 z-20 pointer-events-none">
-            <span class="px-3 py-1 rounded-full bg-slate-900/80 backdrop-blur-md text-white text-[11px] font-medium border border-white/10 shadow-sm">
+            <span class="px-3 py-1 rounded-full bg-slate-900/90 backdrop-blur-md text-white text-[11px] font-bold border border-white/20 shadow-sm uppercase tracking-wider">
               Antes
             </span>
           </div>
@@ -358,27 +538,23 @@
                class="absolute top-0 bottom-0 z-30 pointer-events-none -ml-[1px] flex items-center justify-center"
                style="left: var(--slider-pos, 50%);">
             
-            <!-- Linha fina branca com brilho sutil -->
-            <div class="w-[2px] h-full bg-white shadow-[0_0_8px_rgba(2,132,199,0.4)]"></div>
+            <div class="w-[2px] h-full bg-white shadow-[0_0_8px_rgba(2,132,199,0.5)]"></div>
             
-            <!-- Botão Circular de Arraste Minimalista -->
-            <div class="absolute w-8 h-8 rounded-full bg-white text-petroleum-900 shadow-md border border-slate-200 flex items-center justify-center text-[10px] font-bold">
-              <i class="fa-solid fa-left-right text-brand-600"></i>
+            <div class="absolute w-9 h-9 rounded-full bg-white text-slate-900 shadow-lg border border-slate-200 flex items-center justify-center text-[10px] font-bold">
+              <span class="text-brand-600">◀ ▶</span>
             </div>
           </div>
 
-          <!-- Input acessível para navegação por teclado -->
           <input type="range" id="slider-range" min="0" max="100" value="50" class="sr-only" aria-label="Comparador Antes e Depois">
 
         </div>
 
-        <!-- Instrução de Apoio -->
-        <div class="flex items-center justify-between text-xs text-slate-400 mt-4 px-2 font-light">
+        <div class="flex items-center justify-between text-xs text-slate-500 mt-4 px-2 font-light">
           <div class="flex items-center gap-1.5">
-            <i class="fa-solid fa-arrows-left-right text-brand-500 text-[11px]"></i>
-            <span>Arraste ou deslize para inspecionar</span>
+            <i class="fa-solid fa-arrows-left-right text-brand-600 text-[11px]"></i>
+            <span>Arraste lateralmente para inspecionar</span>
           </div>
-          <span>Fechamento de diastema & reanatomização cerâmica</span>
+          <span>Fechamento de diastema & cerâmicas translúcidas</span>
         </div>
 
       </div>
@@ -388,30 +564,178 @@
 
 
   <!-- ======================================================== -->
-  <!-- SEÇÃO 4: CONTATO & AGENDAMENTO DIRETO                    -->
+  <!-- 7. PERGUNTAS FREQUENTES (FAQ ACORDEÃO)                   -->
   <!-- ======================================================== -->
-  <section id="contato" class="relative py-28 px-6 md:px-12 bg-gradient-to-b from-white via-sky-50/30 to-slate-50">
+  <section id="faq" class="py-24 px-6 md:px-12 bg-white border-b border-slate-200">
+    <div class="max-w-3xl mx-auto">
+      
+      <div class="text-center mb-14">
+        <span class="text-xs uppercase font-semibold tracking-widest text-brand-600 block mb-2">
+          Tire Suas Dúvidas
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900">
+          Perguntas Frequentes
+        </h2>
+      </div>
+
+      <!-- Acordeão Minimalista -->
+      <div class="space-y-4">
+        
+        <!-- Pergunta 1 -->
+        <div class="faq-item border border-slate-200 rounded-2xl p-5 hover:border-slate-300 transition-colors">
+          <button class="faq-toggle w-full flex items-center justify-between text-left font-semibold text-slate-900 text-sm sm:text-base focus:outline-none">
+            <span>As lentes de contato desgastam muito o dente natural?</span>
+            <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden pt-3 text-xs sm:text-sm text-slate-500 font-light leading-relaxed border-t border-slate-100 mt-3">
+            Não. Na Marinho Dentistas seguimos a filosofia minimamente invasiva. As lentes cerâmicas ultrafinas (de 0.2mm a 0.4mm) exigem apenas uma preparação microscópica para assentamento ou, em diversos casos de fechamento de diastema e reanatomização, nenhum desgaste da estrutura sadia.
+          </div>
+        </div>
+
+        <!-- Pergunta 2 -->
+        <div class="faq-item border border-slate-200 rounded-2xl p-5 hover:border-slate-300 transition-colors">
+          <button class="faq-toggle w-full flex items-center justify-between text-left font-semibold text-slate-900 text-sm sm:text-base focus:outline-none">
+            <span>Quanto tempo dura o tratamento de lentes de contato dentais?</span>
+            <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden pt-3 text-xs sm:text-sm text-slate-500 font-light leading-relaxed border-t border-slate-100 mt-3">
+            As cerâmicas odontológicas possuem estabilidade de cor permanente (não mancham com café, vinho ou cigarro) e altíssima resistência mecânica. Com higienização adequada e visitas semestrais de rotina, as lentes duram de 10 a mais de 15 anos preservando o brilho inicial.
+          </div>
+        </div>
+
+        <!-- Pergunta 3 -->
+        <div class="faq-item border border-slate-200 rounded-2xl p-5 hover:border-slate-300 transition-colors">
+          <button class="faq-toggle w-full flex items-center justify-between text-left font-semibold text-slate-900 text-sm sm:text-base focus:outline-none">
+            <span>O procedimento causa dor ou sensibilidade?</span>
+            <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden pt-3 text-xs sm:text-sm text-slate-500 font-light leading-relaxed border-t border-slate-100 mt-3">
+            O tratamento é 100% indolor. Utilizamos anestesia computadorizada de fluxo controlado que evita qualquer desconforto da agulha tradicional, além de pomadas tópicas prévias. O paciente permanece tranquilo durante todo o procedimento com fones e áudio relaxante.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ======================================================== -->
+  <!-- 8. LOCALIZAÇÃO & UNIDADES (EXTREMA & TOLEDO)             -->
+  <!-- ======================================================== -->
+  <section id="unidades" class="py-24 px-6 md:px-12 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-6xl mx-auto">
+      
+      <div class="text-center max-w-xl mx-auto mb-16">
+        <span class="text-xs uppercase font-semibold tracking-widest text-brand-600 block mb-2">
+          Duas Unidades para Você
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900">
+          Nossas Unidades
+        </h2>
+        <p class="text-slate-500 text-sm font-light mt-3 leading-relaxed">
+          Estrutura completa com estacionamento próximo e fácil acesso nas cidades de Extrema e Toledo.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Unidade Extrema -->
+        <div class="bg-white rounded-3xl p-8 border border-slate-200/80 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-full bg-sky-50 text-brand-700 text-xs font-semibold uppercase tracking-wider">
+                Unidade Extrema • Matriz
+              </span>
+              <span class="text-xs text-slate-400">CRO-MG: 29.408</span>
+            </div>
+
+            <h3 class="text-xl font-bold text-slate-900 mb-2">Clínica Extrema</h3>
+            <p class="text-slate-600 text-sm leading-relaxed font-light mb-4">
+              Rua João Mendes, 103 - Centro<br>
+              Extrema - MG • CEP: 37640-000
+            </p>
+
+            <div class="space-y-1.5 text-xs text-slate-500 font-light mb-6">
+              <p><strong class="text-slate-700 font-medium">Horários:</strong> Seg a Sex das 08h às 19h | Sáb das 08h às 13h</p>
+              <p><strong class="text-slate-700 font-medium">Telefone:</strong> (35) 3435-1690</p>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row items-center gap-3 pt-4 border-t border-slate-100">
+            <a href="https://maps.google.com/?q=Rua+João+Mendes,+103,+Extrema+-+MG" target="_blank" rel="noopener noreferrer"
+               class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-medium transition-colors">
+              <i class="fa-solid fa-location-arrow text-brand-600"></i>
+              <span>Como Chegar no Maps</span>
+            </a>
+            <a href="https://wa.me/553534351690?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20na%20Unidade%20Extrema" target="_blank" rel="noopener noreferrer"
+               class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-xs font-semibold uppercase tracking-wider transition-colors shadow-sm">
+              <i class="fa-brands fa-whatsapp text-sm"></i>
+              <span>Agendar em Extrema</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Unidade Toledo -->
+        <div class="bg-white rounded-3xl p-8 border border-slate-200/80 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-semibold uppercase tracking-wider">
+                Unidade Toledo
+              </span>
+              <span class="text-xs text-slate-400">Atendimento Integrado</span>
+            </div>
+
+            <h3 class="text-xl font-bold text-slate-900 mb-2">Clínica Toledo</h3>
+            <p class="text-slate-600 text-sm leading-relaxed font-light mb-4">
+              Atendimento com hora marcada com a mesma tecnologia, conforto e acolhimento da matriz.
+            </p>
+
+            <div class="space-y-1.5 text-xs text-slate-500 font-light mb-6">
+              <p><strong class="text-slate-700 font-medium">Horários:</strong> Dias e horários agendados previamente</p>
+              <p><strong class="text-slate-700 font-medium">Atendimento:</strong> Central unificada via WhatsApp</p>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100">
+            <a href="https://wa.me/553534351690?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20na%20Unidade%20Toledo" target="_blank" rel="noopener noreferrer"
+               class="w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-brand-600 text-white text-xs font-semibold uppercase tracking-wider transition-colors shadow-sm">
+              <i class="fa-brands fa-whatsapp text-sm"></i>
+              <span>Agendar em Toledo</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ======================================================== -->
+  <!-- 9. CONTATO & AGENDAMENTO DIRETO                          -->
+  <!-- ======================================================== -->
+  <section id="contato" class="py-28 px-6 md:px-12 bg-gradient-to-b from-white via-sky-50/40 to-slate-100">
     <div class="max-w-3xl mx-auto text-center">
       
       <span class="text-xs uppercase font-semibold tracking-widest text-brand-600 block mb-3">
         Atendimento Personalizado
       </span>
 
-      <h2 class="text-3xl sm:text-5xl font-light tracking-tight text-petroleum-900 mb-4 leading-tight">
+      <h2 class="text-3xl sm:text-5xl font-light tracking-tight text-slate-900 mb-4 leading-tight">
         Pronto para transformar <br>
-        <span class="font-semibold text-petroleum-900">o seu sorriso?</span>
+        <span class="font-semibold text-slate-900">o seu sorriso?</span>
       </h2>
 
       <p class="text-slate-500 text-sm sm:text-base font-light max-w-lg mx-auto mb-10 leading-relaxed">
-        Agende sua consulta de avaliação com hora marcada em Extrema ou Toledo. Nossa equipe analisará seu caso com escaneamento digital e atendimento acolhedor.
+        Agende sua consulta de avaliação com hora marcada em Extrema ou Toledo. Nossa equipe analisará seu caso com escaneamento digital 3D e acolhimento total.
       </p>
 
-      <!-- Botão CTA Principal -->
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
         <a href="https://wa.me/553534351690?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Marinho%20Dentistas" 
            target="_blank" 
            rel="noopener noreferrer"
-           class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-medium text-sm transition-all duration-200 shadow-sm hover:shadow-md hover:scale-[1.02]">
+           class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-brand-600 hover:bg-brand-500 text-white font-semibold text-sm transition-all duration-200 shadow-md hover:shadow-lg hover:scale-105">
           <i class="fa-brands fa-whatsapp text-lg"></i>
           <span>Falar no WhatsApp</span>
         </a>
@@ -419,24 +743,23 @@
         <a href="https://www.instagram.com/marinho.dentista?vrfl=ZWV6bHVrbWFveXhy" 
            target="_blank" 
            rel="noopener noreferrer"
-           class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-white hover:bg-slate-50 text-slate-700 font-medium text-sm border border-slate-200 transition-colors">
+           class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-white hover:bg-slate-50 text-slate-700 font-medium text-sm border border-slate-200 transition-colors shadow-sm">
           <i class="fa-brands fa-instagram text-slate-500"></i>
           <span>@marinho.dentista</span>
         </a>
       </div>
 
-      <!-- Informações Essenciais em Linhas Finas -->
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-10 border-t border-slate-200 text-left sm:text-center text-xs text-slate-500 font-light">
         <div>
-          <span class="block font-medium text-petroleum-900 mb-1">Unidade Extrema</span>
+          <span class="block font-medium text-slate-900 mb-1">Unidade Extrema</span>
           <span>Rua João Mendes, 103 - Centro<br>Extrema, MG</span>
         </div>
         <div>
-          <span class="block font-medium text-petroleum-900 mb-1">Unidade Toledo</span>
+          <span class="block font-medium text-slate-900 mb-1">Unidade Toledo</span>
           <span>Atendimento integrado<br>com hora marcada</span>
         </div>
         <div>
-          <span class="block font-medium text-petroleum-900 mb-1">Contato & Registro</span>
+          <span class="block font-medium text-slate-900 mb-1">Contato & Registro</span>
           <span>(35) 3435-1690<br>CRO-MG: 29.408</span>
         </div>
       </div>
@@ -446,11 +769,11 @@
 
 
   <!-- ======================================================== -->
-  <!-- RODAPÉ MINIMALISTA                                       -->
+  <!-- 10. RODAPÉ MINIMALISTA                                   -->
   <!-- ======================================================== -->
-  <footer class="py-8 px-6 md:px-12 bg-white border-t border-slate-100 text-slate-400 text-[11px] font-light">
+  <footer class="py-8 px-6 md:px-12 bg-white border-t border-slate-200 text-slate-400 text-[11px] font-light">
     <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p>© 2026 Marinho Dentistas. Todos os direitos reservados.</p>
+      <p>© 2026 Marinho Dentistas. Todos os direitos reservados. CRO-MG: 29.408</p>
       <div class="flex items-center gap-6">
         <span>Odontologia Estética & Reabilitação Digital</span>
         <a href="#hero-scroll" class="text-slate-600 hover:text-brand-600 transition-colors">Voltar ao topo ↑</a>
@@ -460,18 +783,35 @@
 
 
   <!-- ======================================================== -->
-  <!-- SCRIPTS: GSAP SCROLLTRIGGER, THREE.JS 3D & COMPARADOR    -->
+  <!-- SCRIPTS JAVASCRIPT: GSAP, THREE.JS 3D, SLIDER & FAQ      -->
   <!-- ======================================================== -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       
       // ========================================================
-      // 1. GSAP SCROLLTRIGGER: SCROLL-BOUND HERO VIDEO
+      // 1. NAVBAR DINÂMICA: TOTALMENTE TRANSPARENTE NO VÍDEO
+      // ========================================================
+      const header = document.getElementById("main-header");
+      const heroSection = document.getElementById("hero-scroll");
+
+      window.addEventListener("scroll", () => {
+        const heroBottom = heroSection.getBoundingClientRect().bottom;
+        // Quando ainda estiver na área do vídeo hero
+        if (heroBottom > 120) {
+          header.className = "fixed top-0 left-0 w-full z-50 transition-all duration-500 py-6 px-6 md:px-12 bg-transparent text-white";
+        } else {
+          // Quando passar para as seções claras
+          header.className = "fixed top-0 left-0 w-full z-50 transition-all duration-500 py-3.5 px-6 md:px-12 bg-slate-950/85 backdrop-blur-md border-b border-white/10 text-white shadow-lg";
+        }
+      });
+
+
+      // ========================================================
+      // 2. GSAP SCROLLTRIGGER: SCROLL-BOUND HERO VIDEO
       // ========================================================
       gsap.registerPlugin(ScrollTrigger);
 
       const heroVideo = document.getElementById("hero-video");
-      const heroSection = document.getElementById("hero-scroll");
       const scrollHint = document.getElementById("initial-scroll-hint");
 
       function initHeroScroll() {
@@ -485,7 +825,7 @@
             end: "bottom bottom",
             scrub: 0.6,
             onUpdate: (self) => {
-              if (self.progress > 0.05 && scrollHint) {
+              if (self.progress > 0.04 && scrollHint) {
                 scrollHint.style.opacity = "0";
               } else if (scrollHint) {
                 scrollHint.style.opacity = "1";
@@ -494,10 +834,9 @@
           }
         });
 
-        // Controle do tempo do vídeo
         tl.fromTo(heroVideo, { currentTime: 0.01 }, { currentTime: duration, ease: "none" }, 0);
 
-        // Texto 1: "Transformamos vidas através do sorriso" (Surge logo após o primeiro frame)
+        // Texto 1
         tl.fromTo("#hero-text-1", 
           { opacity: 0, y: 35 }, 
           { opacity: 1, y: 0, duration: 0.15, ease: "power2.out" }, 
@@ -508,7 +847,7 @@
           0.34
         );
 
-        // Texto 2: "Arquitetura concebida para acolher"
+        // Texto 2
         tl.fromTo("#hero-text-2", 
           { opacity: 0, y: 35 }, 
           { opacity: 1, y: 0, duration: 0.15, ease: "power2.out" }, 
@@ -519,7 +858,7 @@
           0.66
         );
 
-        // Texto 3: "Tecnologia digital e cerâmicas nobres"
+        // Texto 3
         tl.fromTo("#hero-text-3", 
           { opacity: 0, y: 35 }, 
           { opacity: 1, y: 0, duration: 0.15, ease: "power2.out" }, 
@@ -535,159 +874,168 @@
           if (!ScrollTrigger.getById("hero-scroll-trigger")) {
             initHeroScroll();
           }
-        }, 1000);
+        }, 1200);
       }
 
 
       // ========================================================
-      // 2. MODELO 3D PROCEDURAL DE ARCADA DENTÁRIA COM THREE.JS
+      // 3. THREE.JS 3D: ARCADA EM FUNDO ESCURO COM ALTO BRILHO
       // ========================================================
       const container3D = document.getElementById("three-viewport");
       if (container3D) {
         const scene = new THREE.Scene();
 
         const camera = new THREE.PerspectiveCamera(
-          42,
+          40,
           container3D.clientWidth / container3D.clientHeight,
           0.1,
           100
         );
-        camera.position.set(0, 3.5, 7.5);
-        camera.lookAt(0, -0.2, 0);
+        camera.position.set(0, 3.6, 7.8);
+        camera.lookAt(0, -0.1, 0);
 
         const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
         renderer.setSize(container3D.clientWidth, container3D.clientHeight);
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         renderer.toneMapping = THREE.ACESFilmicToneMapping;
-        renderer.toneMappingExposure = 1.1;
+        renderer.toneMappingExposure = 1.25;
         container3D.appendChild(renderer.domElement);
 
-        // Iluminação de Estúdio Dental
-        const ambientLight = new THREE.AmbientLight(0xffffff, 0.9);
+        // Iluminação de Estúdio Escuro & Destaque
+        const ambientLight = new THREE.AmbientLight(0x0f172a, 1.2);
         scene.add(ambientLight);
 
-        const keyLight = new THREE.DirectionalLight(0xffffff, 1.8);
-        keyLight.position.set(5, 8, 6);
+        // Luz Principal Superior
+        const keyLight = new THREE.DirectionalLight(0xffffff, 2.2);
+        keyLight.position.set(4, 7, 5);
         scene.add(keyLight);
 
-        // Luz Azulada Clínica (Rim Light)
-        const rimLight = new THREE.DirectionalLight(0x38bdf8, 2.2);
-        rimLight.position.set(-6, 4, -4);
-        scene.add(rimLight);
+        // Luz Azulada Lateral (Rim Light Ciano)
+        const cyanRim = new THREE.DirectionalLight(0x38bdf8, 3.5);
+        cyanRim.position.set(-6, 3, -4);
+        scene.add(cyanRim);
 
-        const fillLight = new THREE.DirectionalLight(0xbae6fd, 0.8);
-        fillLight.position.set(0, -4, 5);
+        // Luz de Preenchimento Inferior
+        const fillLight = new THREE.DirectionalLight(0x0284c7, 1.5);
+        fillLight.position.set(0, -4, 4);
         scene.add(fillLight);
 
-        // Grupo Principal da Arcada
+        // Luz Branca Suave Posterior
+        const backLight = new THREE.DirectionalLight(0xffffff, 1.2);
+        backLight.position.set(0, 5, -5);
+        scene.add(backLight);
+
+        // Grupo da Arcada
         const archGroup = new THREE.Group();
         scene.add(archGroup);
 
-        // Material Cerâmico Estético Realista (MeshPhysicalMaterial)
+        // Material Cerâmico Realista de Alto Brilho (MeshPhysicalMaterial)
         const ceramicToothMaterial = new THREE.MeshPhysicalMaterial({
           color: 0xffffff,
           emissive: 0x0284c7,
-          emissiveIntensity: 0.04,
-          roughness: 0.12,
-          metalness: 0.02,
-          clearcoat: 0.95,
-          clearcoatRoughness: 0.08,
-          transmission: 0.2, // Translucência estética de porcelana pura
-          ior: 1.5,
-          reflectivity: 0.85
+          emissiveIntensity: 0.05,
+          roughness: 0.14,
+          metalness: 0.05,
+          clearcoat: 1.0,
+          clearcoatRoughness: 0.06,
+          transmission: 0.18,
+          ior: 1.54,
+          reflectivity: 0.95
         });
 
-        // Material de Gengiva Suave
+        // Material Gengival
         const gumMaterial = new THREE.MeshPhysicalMaterial({
-          color: 0xfbcfe8,
-          roughness: 0.4,
-          clearcoat: 0.3,
-          transmission: 0.15
+          color: 0xf472b6,
+          emissive: 0x831843,
+          emissiveIntensity: 0.1,
+          roughness: 0.35,
+          clearcoat: 0.4,
+          transmission: 0.1
         });
 
-        // Construção Paramétrica da Curva da Arcada Superior
-        const toothCount = 14;
-        const radiusX = 2.4;
-        const radiusZ = 2.1;
+        // Partículas 3D Tecnológicas ao Fundo (Scanner Point Cloud)
+        const particleCount = 120;
+        const particleGeo = new THREE.BufferGeometry();
+        const positions = new Float32Array(particleCount * 3);
+        for (let i = 0; i < particleCount * 3; i += 3) {
+          positions[i] = (Math.random() - 0.5) * 10;
+          positions[i + 1] = (Math.random() - 0.5) * 8;
+          positions[i + 2] = (Math.random() - 0.5) * 8;
+        }
+        particleGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+        const particleMat = new THREE.PointsMaterial({
+          color: 0x38bdf8,
+          size: 0.05,
+          transparent: true,
+          opacity: 0.5
+        });
+        const particles = new THREE.Points(particleGeo, particleMat);
+        scene.add(particles);
 
-        // Dentes posicionados ao longo da curva elíptica parabólica
+        // Construção Paramétrica dos Dentes da Arcada
+        const toothCount = 14;
+        const radiusX = 2.45;
+        const radiusZ = 2.15;
+
         for (let i = 0; i < toothCount; i++) {
-          const t = (i / (toothCount - 1)) * Math.PI; // de 0 a PI
+          const t = (i / (toothCount - 1)) * Math.PI;
           const angle = Math.PI - t;
 
-          // Posição no arco
-          const x = Math.cos(angle) * (radiusX - 0.2 * Math.sin(angle));
+          const x = Math.cos(angle) * (radiusX - 0.22 * Math.sin(angle));
           const z = Math.sin(angle) * radiusZ - 1.0;
 
-          // Variações anatômicas por tipo de dente
           const distFromCenter = Math.abs(i - (toothCount - 1) / 2);
-          let width = 0.42;
-          let height = 0.72;
-          let depth = 0.45;
+          let width = 0.44;
+          let height = 0.76;
+          let depth = 0.46;
 
           if (distFromCenter < 1) {
-            // Incisivos Centrais
-            width = 0.48;
-            height = 0.82;
-            depth = 0.38;
+            width = 0.50; height = 0.86; depth = 0.40;
           } else if (distFromCenter < 2) {
-            // Incisivos Laterais
-            width = 0.40;
-            height = 0.74;
-            depth = 0.36;
+            width = 0.42; height = 0.78; depth = 0.38;
           } else if (distFromCenter < 3.2) {
-            // Caninos
-            width = 0.44;
-            height = 0.85;
-            depth = 0.48;
+            width = 0.46; height = 0.90; depth = 0.50;
           } else {
-            // Pré-molares e Molares
-            width = 0.52;
-            height = 0.65;
-            depth = 0.62;
+            width = 0.54; height = 0.68; depth = 0.64;
           }
 
-          // Geometria arredondada suave do dente
-          const toothGeo = new THREE.CylinderGeometry(width * 0.9, width * 0.75, height, 16);
+          const toothGeo = new THREE.CylinderGeometry(width * 0.92, width * 0.76, height, 16);
           toothGeo.scale(1, 1, depth / width);
 
           const toothMesh = new THREE.Mesh(toothGeo, ceramicToothMaterial);
           toothMesh.position.set(x, 0, z);
 
-          // Rotação para acompanhar a curvatura da arcada
-          const tangentAngle = Math.atan2(Math.sin(angle), -Math.cos(angle));
           toothMesh.rotation.y = angle - Math.PI / 2;
-          toothMesh.rotation.x = 0.1;
+          toothMesh.rotation.x = 0.12;
 
           archGroup.add(toothMesh);
         }
 
-        // Base de Suporte da Gengiva (Tubo Curvo)
+        // Base Gengival Curva
         const curvePoints = [];
-        for (let i = 0; i <= 20; i++) {
-          const t = (i / 20) * Math.PI;
+        for (let i = 0; i <= 24; i++) {
+          const t = (i / 24) * Math.PI;
           const a = Math.PI - t;
           curvePoints.push(new THREE.Vector3(
-            Math.cos(a) * (radiusX - 0.2 * Math.sin(a)),
-            0.28,
+            Math.cos(a) * (radiusX - 0.22 * Math.sin(a)),
+            0.30,
             Math.sin(a) * radiusZ - 1.0
           ));
         }
         const archCurve = new THREE.CatmullRomCurve3(curvePoints);
-        const gumGeo = new THREE.TubeGeometry(archCurve, 32, 0.32, 16, false);
+        const gumGeo = new THREE.TubeGeometry(archCurve, 36, 0.34, 16, false);
         const gumMesh = new THREE.Mesh(gumGeo, gumMaterial);
         archGroup.add(gumMesh);
 
-        // Inclinação inicial elegante da arcada
-        archGroup.rotation.x = 0.35;
+        archGroup.rotation.x = 0.38;
         archGroup.rotation.y = -0.3;
 
-        // Interação com Mouse / Touch Drag (Rotação 360°)
+        // Controle por Arraste (Mouse & Touch)
         let isPointerDown = false;
         let prevMouseX = 0;
         let prevMouseY = 0;
         let targetRotY = -0.3;
-        let targetRotX = 0.35;
+        let targetRotX = 0.38;
 
         container3D.addEventListener("mousedown", (e) => {
           isPointerDown = true;
@@ -739,41 +1087,48 @@
         const resetBtn = document.getElementById("reset-3d-btn");
         if (resetBtn) {
           resetBtn.addEventListener("click", () => {
-            targetRotX = 0.35;
+            targetRotX = 0.38;
             targetRotY = -0.3;
           });
         }
 
-        // Sincronização sutil com ScrollTrigger
-        ScrollTrigger.create({
-          trigger: "#experiencia-3d",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 1,
-          onUpdate: (self) => {
-            if (!isPointerDown) {
-              targetRotY = -0.3 + self.progress * Math.PI * 0.6;
-            }
-          }
-        });
+        // Laser Scan Beam Animation
+        const laser = document.getElementById("scanner-laser");
+        let laserActive = true;
+        const toggleScanBtn = document.getElementById("toggle-scan-btn");
+        if (toggleScanBtn) {
+          toggleScanBtn.addEventListener("click", () => {
+            laserActive = !laserActive;
+            if (laser) laser.style.display = laserActive ? "block" : "none";
+          });
+        }
 
-        // Loop de Animação com Interpolação Fluida
+        // Loop de Animação
+        let clock = 0;
         function animate() {
           requestAnimationFrame(animate);
+          clock += 0.02;
 
-          // Rotação ociosa suave caso o usuário não esteja interagindo
           if (!isPointerDown) {
-            targetRotY += 0.002;
+            targetRotY += 0.003;
           }
 
           archGroup.rotation.y += (targetRotY - archGroup.rotation.y) * 0.08;
           archGroup.rotation.x += (targetRotX - archGroup.rotation.x) * 0.08;
 
+          // Movimento suave das partículas
+          particles.rotation.y += 0.0008;
+
+          // Laser sweep vertical
+          if (laser && laserActive) {
+            const pos = (Math.sin(clock * 1.5) + 1) / 2; // 0 to 1
+            laser.style.top = `${20 + pos * 60}%`;
+          }
+
           renderer.render(scene, camera);
         }
         animate();
 
-        // Responsividade ao Redimensionar
         window.addEventListener("resize", () => {
           if (!container3D) return;
           camera.aspect = container3D.clientWidth / container3D.clientHeight;
@@ -784,7 +1139,7 @@
 
 
       // ========================================================
-      // 3. COMPARADOR INTERATIVO ANTES E DEPOIS (MACRO CLOSE-UP)
+      // 4. COMPARADOR ANTES E DEPOIS (DRAG & TOUCH)
       // ========================================================
       const compareBox = document.getElementById("image-compare-box");
       const rangeInput = document.getElementById("slider-range");
@@ -802,7 +1157,6 @@
       }
 
       if (compareBox) {
-        // Eventos Mouse
         compareBox.addEventListener("mousedown", (e) => {
           isDraggingSlider = true;
           updateSlider(e.clientX);
@@ -817,7 +1171,6 @@
           isDraggingSlider = false;
         });
 
-        // Eventos Touch Móvel
         compareBox.addEventListener("touchstart", (e) => {
           isDraggingSlider = true;
           if (e.touches.length > 0) {
@@ -834,13 +1187,47 @@
           isDraggingSlider = false;
         });
 
-        // Acessibilidade
         if (rangeInput) {
           rangeInput.addEventListener("input", (e) => {
             compareBox.style.setProperty("--slider-pos", `${e.target.value}%`);
           });
         }
       }
+
+
+      // ========================================================
+      // 5. ACORDEÃO FAQ SUAVE
+      // ========================================================
+      const faqItems = document.querySelectorAll(".faq-item");
+      faqItems.forEach(item => {
+        const toggleBtn = item.querySelector(".faq-toggle");
+        const content = item.querySelector(".faq-content");
+        const icon = item.querySelector("i");
+
+        if (toggleBtn && content) {
+          toggleBtn.addEventListener("click", () => {
+            const isHidden = content.classList.contains("hidden");
+
+            // Fecha outros abertos
+            faqItems.forEach(other => {
+              const otherContent = other.querySelector(".faq-content");
+              const otherIcon = other.querySelector("i");
+              if (otherContent && other !== item) {
+                otherContent.classList.add("hidden");
+                if (otherIcon) otherIcon.style.transform = "rotate(0deg)";
+              }
+            });
+
+            if (isHidden) {
+              content.classList.remove("hidden");
+              if (icon) icon.style.transform = "rotate(180deg)";
+            } else {
+              content.classList.add("hidden");
+              if (icon) icon.style.transform = "rotate(0deg)";
+            }
+          });
+        }
+      });
 
     });
   </script>
