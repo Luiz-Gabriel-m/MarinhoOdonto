@@ -148,8 +148,17 @@
     <!-- Janela de visualização fixa (Sticky 100vh) -->
     <div id="hero-sticky" class="sticky top-0 w-full h-screen overflow-hidden flex items-center justify-center">
       
-      <!-- Vídeo ocupando a tela cheia -->
-      <video id="hero-video" class="absolute inset-0 w-full h-full object-cover filter brightness-[0.85] contrast-[1.05]" playsinline webkit-playsinline muted preload="auto">
+      <!-- Vídeo Hero com todos os atributos obrigatórios para iOS/WebKit e Android -->
+      <video id="heroVideo" 
+             class="absolute inset-0 w-full h-full object-cover pointer-events-none filter brightness-[0.85] contrast-[1.05]" 
+             playsinline 
+             webkit-playsinline 
+             muted 
+             autoplay 
+             loop 
+             preload="auto" 
+             crossorigin="anonymous"
+             poster="assets/images/clinic-facade-night.jpg">
         <source src="assets/videos/hero-video.mp4" type="video/mp4">
       </video>
 
@@ -812,23 +821,56 @@
 
 
       // ========================================================
-      // 2. GSAP SCROLLTRIGGER: SCROLL-BOUND HERO VIDEO
+      // 2. GSAP SCROLLTRIGGER: SCROLL-BOUND HERO VIDEO (MOBILE OK)
       // ========================================================
       gsap.registerPlugin(ScrollTrigger);
 
-      const heroVideo = document.getElementById("hero-video");
+      const heroVideo = document.getElementById("heroVideo");
       const scrollHint = document.getElementById("initial-scroll-hint");
 
+      // Rotina de desbloqueio de decodificação na GPU para WebKit/iOS Safari e Android
+      let isVideoUnlocked = false;
+      function unlockVideoMobile() {
+        if (isVideoUnlocked || !heroVideo) return;
+        isVideoUnlocked = true;
+
+        const playPromise = heroVideo.play();
+        if (playPromise !== undefined) {
+          playPromise.then(() => {
+            heroVideo.pause();
+            if (heroVideo.currentTime < 0.01) {
+              heroVideo.currentTime = 0.01;
+            }
+          }).catch(() => {
+            // Silencia restrições se o usuário ainda não tiver clicado
+          });
+        }
+
+        window.removeEventListener("touchstart", unlockVideoMobile);
+        window.removeEventListener("pointerdown", unlockVideoMobile);
+        window.removeEventListener("scroll", unlockVideoMobile);
+      }
+
+      window.addEventListener("touchstart", unlockVideoMobile, { passive: true, once: true });
+      window.addEventListener("pointerdown", unlockVideoMobile, { passive: true, once: true });
+      window.addEventListener("scroll", unlockVideoMobile, { passive: true, once: true });
+
+      let timelineInitialized = false;
+
       function initHeroScroll() {
+        if (timelineInitialized || !heroVideo) return;
+
         const duration = heroVideo.duration || 9;
         heroVideo.pause();
+        heroVideo.currentTime = 0.01; // Elimina o frame preto inicial
 
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: heroSection,
             start: "top top",
             end: "bottom bottom",
-            scrub: 0.6,
+            scrub: 0.1, // Scrub imediato e responsivo
+            invalidateOnRefresh: true, // Recalcula limites ao redimensionar barra do Safari iOS
             onUpdate: (self) => {
               if (self.progress > 0.04 && scrollHint) {
                 scrollHint.style.opacity = "0";
@@ -839,6 +881,7 @@
           }
         });
 
+        // Controle rígido de reprodução por scroll
         tl.fromTo(heroVideo, { currentTime: 0.01 }, { currentTime: duration, ease: "none" }, 0);
 
         // Texto 1
@@ -869,17 +912,22 @@
           { opacity: 1, y: 0, duration: 0.15, ease: "power2.out" }, 
           0.74
         );
+
+        timelineInitialized = true;
+        ScrollTrigger.refresh();
       }
 
+      // Garante carregamento seguro dos metadados
       if (heroVideo.readyState >= 1) {
         initHeroScroll();
       } else {
         heroVideo.addEventListener("loadedmetadata", initHeroScroll, { once: true });
+        heroVideo.addEventListener("canplay", initHeroScroll, { once: true });
         setTimeout(() => {
-          if (!ScrollTrigger.getById("hero-scroll-trigger")) {
+          if (!timelineInitialized) {
             initHeroScroll();
           }
-        }, 1200);
+        }, 800);
       }
 
 
@@ -1211,7 +1259,6 @@
           toggleBtn.addEventListener("click", () => {
             const isHidden = content.classList.contains("hidden");
 
-            // Fecha outros abertos
             faqItems.forEach(other => {
               const otherContent = other.querySelector(".faq-content");
               const otherIcon = other.querySelector("i");
